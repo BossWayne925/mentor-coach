@@ -1,0 +1,10 @@
+# Normalize line endings — markdown stays LF across Windows/Mac/Linux
+* text=auto eol=lf
+
+# Binary files
+*.docx binary
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
