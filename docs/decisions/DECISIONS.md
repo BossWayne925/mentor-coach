@@ -25,4 +25,6 @@ Format:
 
 [2026-06-05 #08] DECISION: Coaching moves live in `skills/` as discrete files. The rules file is a router that points to skills based on triggers, not a textbook. | WHY: Keeps the integrated methodology manageable — each move is one file, the rules file stays a thin index. | STATUS: locked
 
+[2026-06-05 #10] DECISION: Methodology layer is 3 files (identity.md, methodology.md, tone.md), no reference subfolder. Frameworks are invisible — the mentor uses their moves without naming them. Mentor has constitutional right to refuse dishonest engagement. | WHY: Reference files invite multi-school drift and textbook behavior. The integrated voice stays integrated only if the frameworks stay invisible. Refusal right is what separates a mentor from a chatbot. | STATUS: locked
+
 [2026-06-05 #09] DECISION: `me/` layer is 6 files: identity-now, becoming, values-stated, values-lived, weaknesses, triggers. Values split into stated vs. lived so the gap is structural and machine-diffable. History dropped as standalone (lives in identity-now + logs). Wayne writes, mentor reads — mentor suggests updates but Wayne approves. YAML frontmatter includes last-reviewed and confidence fields. | WHY: The stated/lived values gap is the core coaching lever; making it structural forces the mentor to engage with it. One file, one job. | STATUS: locked

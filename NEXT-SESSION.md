@@ -6,7 +6,7 @@
 
 **Project:** Folder-based AI mentor focused on identity transformation. v1 ships a single-arc, single-voice mentor; designed as the first vertical slice of a larger mentor OS (sibling arcs + 7-mode system come in v2).
 
-**Phase:** Brainstorming. Foundation committed (git, content layer, decisions doc, README). **Section 1 (top-level architecture) and Section 3 (`me/` layer) are approved.** Sections 2, 4, 5 still to do.
+**Phase:** Brainstorming → Design. Foundation committed. **Sections 1 (architecture), 2 (methodology), and 3 (`me/` layer) are approved.** Sections 4 and 5 still to do.
 
 ## Read these four files in order
 
@@ -17,7 +17,7 @@
 
 ## What's next (sections still to design)
 
-- **Section 2: Methodology layer** — `mentor/methodology.md`, `mentor/tone.md`, `mentor/reference/*` (5 framework files). The integrated D method cashed out into specifics the mentor coaches from.
+- ~~**Section 2: Methodology layer**~~ — **Done.** 3 files: `mentor/identity.md`, `mentor/methodology.md`, `mentor/tone.md`. No reference subfolder. Decision #10 locked.
 - **Section 3: `me/` layer** — 6 files capturing what the mentor knows about Wayne (current identity, becoming, values, weaknesses, triggers, history). This requires actual interview answers from Wayne.
 - **Section 4: goals + skills + hooks** — active-arc, the 7 coaching moves, the daily-checkin and weekly-review hooks.
 - **Section 5: `CLAUDE.md` + rules** — runtime entry, plus 3 rule files (coach-not-lecture, pushback-style, markdown-discipline).
@@ -29,7 +29,7 @@ These three were flagged at the end of session 01 build journal and need answers
 
 1. Daily check-in cadence — morning + evening, or evening only?
 2. ~~`me/values.md` shape~~ — **resolved in Decision #09:** split into `values-stated.md` + `values-lived.md`.
-3. Should the mentor be allowed to refuse to engage if Wayne shows up dishonest? (My instinct: yes. Needs to live in `mentor/constitution.md`.)
+3. ~~Should the mentor be allowed to refuse to engage if Wayne shows up dishonest?~~ — **Resolved in Decision #10:** Yes. Constitutional right in `mentor/identity.md`.
 
 ## Conventions to follow next session
 
