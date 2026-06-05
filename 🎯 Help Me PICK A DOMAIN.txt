@@ -1,0 +1,56 @@
+AI Mentor/Coach
+The domain is mine. I need something specific. Something I would actually use.
+
+🗂️ THE METHODOLOGY
+Here's what you need to know:
+This week I'm learning the foundation of interpretable context methodology. Folders as architecture. Each file does one job well.
+Our coach is a folder with five things:
+📄 identity.md (who the coach is)
+📐 rules.md (how they coach)
+💬 examples.md (what good looks like)
+📚 reference/ (frameworks, drills, source material)
+📖 README.md (how to use it)
+Drop the folder into a Claude project. Claude becomes the coach. Reusable. Shareable. Portable.
+🔥 THE ANGLE 
+A coach is NOT a knowledge base.
+A coach gives feedback. Pushes back. Asks better questions. Holds people accountable.
+When someone says "I had a rough day," a knowledge base says "here are 5 strategies to bounce back."
+A coach says "tell me what happened" and actually listens before responding.
+That distinction is the whole assignment this week. Your rules.md is where you teach the AI to coach instead of inform. 💪
+💼 WHY THIS
+"I can now build a folder-based AI coach using interpretable context methodology" 
+The skill I'm learning this week is writing rules for feedback-style interactions. Almost no one teaches this. 
+📐 THE BAR
+Someone with no context should use this folder and feel coached, not lectured.
+If your output sounds like a Wikipedia article on the domain, you've missed the assignment.
+
+Four things we're looking at:
+✅ Does the coach actually coach? Or does it just answer questions?
+✅ Is the domain specific enough to be useful?
+✅ Is the methodology clean? Each file does one job well.
+✅ README quality. Can a stranger figure this out?
+
+I'm going to write every question needed to build a complete, honest, powerful mentor. These aren't surface questions. Some will be uncomfortable. That's the point.
+
+---**12 sections. 100+ questions. Nothing soft.**
+
+Here's what you have:
+
+| Section | Purpose |
+|---|---|
+| Identity | Who you are vs who you're becoming |
+| Values | What you actually live by |
+| Mindset & Manifestation | Beliefs, rewiring, what you're calling in |
+| Habits & Consistency | The real patterns, not the intended ones |
+| Focus & Productivity | Where time actually goes |
+| Health | IF, clean eating, sleep, movement, mental health |
+| Learning | Psychology, AI, the addiction pattern |
+| Content & Brand | Voice, audience, pillars, fears |
+| Business | What you're building and why |
+| Goals | 90 day / 1 year / 5 year with first actions |
+| Coaching Preferences | How your mentor should work with *you* |
+| Self Awareness | The questions most people skip |
+
+---
+
+Fill it out raw and honest. That file becomes the engine everything runs on.

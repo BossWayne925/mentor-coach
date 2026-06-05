@@ -1,0 +1,437 @@
+Your mentor should have a **house archetype** at the center, then a set of specialized personalities or modes around it so each domain gets the right type of intelligence instead of one generic voice trying to do everything. 
+
+The key is not to keep adding famous people randomly. The key is to create a complete **coverage map** for the actual jobs your coach needs to perform: discipline, philosophy, strategy, manifestation, learning, psychology, health, brand, community, and AI building. 
+
+## Core principle
+
+Your central mentor should remain one unified figure, but he should be able to switch into different operating stances depending on the problem. That keeps the system coherent while still giving you specialized guidance for business decisions, self-mastery, learning, health, and execution. 
+
+So instead of “personalities” in a theatrical sense, think of them as **advisory modes**. Each mode should exist because it solves a distinct type of problem, not because the persona sounds cool. [1]
+
+## Recommended modes
+
+You already have three strong anchors: **Hormozi** for commercial clarity, **Goggins** for discipline and accountability, and **Jim Rohn** for philosophical framing and personal responsibility. Those three cover business leverage, consistency, and meaning well, but they do not fully cover learning, psychology, manifestation, health, brand trust, community, or project-based building. [2][3]
+
+So I would extend the system with a few more functional personalities:
+
+| Mode | What it helps with | Best style inspiration |
+|---|---|---|
+| Operator | offers, leverage, revenue logic, simplification | Hormozi-style strategic compression [2][4] |
+| Enforcer | discipline, consistency, anti-excuse pressure | Goggins-style standards and accountability [5][6] |
+| Philosopher | identity, self-responsibility, long-range thinking | Jim Rohn-style life framing [3][7] |
+| Psychologist | beliefs, resistance, emotional patterns, behavior design | evidence-based behavior change framing [8][9] |
+| Visionary | manifestation, visualization, emotional alignment, future self | Hill/identity-conditioning style grounded by action [10][11] |
+| Teacher | learning, explanation, comprehension, retrieval, synthesis | active recall and spacing-based teaching [12][13] |
+| Architect | AI systems, workflows, files, agents, implementation plans | builder/system designer orientation  |
+| Strategist | brand, positioning, audience, narrative, community growth | trust and community-building orientation [14][15][16] |
+| Steward | fasting, recovery, nutrition, routines, caution boundaries | evidence-aware health guide [17][18] |
+
+This set covers the full surface area you described much better than relying on only three public figures. It also lets the coach feel more original and less derivative. 
+
+## Why these fit
+
+A **Psychologist** mode is necessary because your system is not just about getting more done; it is about understanding why you hesitate, where self-image conflicts with goals, and how to design better behavior loops. Evidence around implementation intentions and planning supports the idea that behavior change improves when intentions are translated into concrete “if-then” plans, so this mode should help convert insight into structured action. [8][9][19]
+
+A **Teacher** mode is necessary because learning is now one of your core domains, and passive summaries are not enough. Research on spacing and retrieval practice supports building a learning mode that turns notes into recall prompts, review cycles, and application challenges rather than just storing information. [12][13]
+
+A **Strategist** mode is necessary because brand and community are not the same as business operations. Trust-building sources emphasize that brand trust depends on delivering promises through competence, integrity, predictability, transparency, and relationship maintenance, while community-oriented sources point to trust growing in peer spaces, creator ecosystems, referrals, and user participation. [15][20][21][16]
+
+An **Architect** mode is necessary because one of your deepest interests is building AI systems, workflows, and interpretable file-based environments. That mode should think in terms of structure, dependencies, templates, tools, routing, validation, and implementation sequences rather than motivation. [1]
+
+A **Steward** mode is necessary because health guidance needs a different ethical posture than mindset or strategy. Intermittent fasting has meaningful evidence behind it, but detox and cleanse claims often do not, so this mode should be practical, cautious, and explicit about uncertainty and boundaries. [17][18]
+
+## Best final set
+
+If I were optimizing this for actual use, I would make these your first **seven** active modes:
+
+1. Operator  
+2. Enforcer  
+3. Philosopher  
+4. Psychologist  
+5. Teacher  
+6. Architect  
+7. Steward  
+
+Then I would add **Visionary** and **Strategist** as secondary modes once the core system works. That gives you strong coverage without creating too many personas too early, which matters because too many modes at the start can make routing messy and weaken clarity. 
+
+## How to organize them
+
+In your file system, each mode should live as a skill file under something like:
+
+```text
+17-skills/
+  modes/
+    operator.md
+    enforcer.md
+    philosopher.md
+    psychologist.md
+    teacher.md
+    architect.md
+    steward.md
+    visionary.md
+    strategist.md
+```
+
+Each file should contain five things: purpose, trigger conditions, tone, questions it asks, and output template. That keeps each mode interpretable and aligns with your preference for folders as architecture and files doing one job well. 
+
+## My recommendation
+
+My strongest recommendation is this: do not name the modes after the public figures in the actual system. Use the public figures only as **internal inspiration** while you design the modes. The live system should use role names like Operator, Enforcer, Philosopher, Psychologist, Teacher, Architect, Strategist, Visionary, and Steward, because that will make the coach feel more timeless, more original, and more portable. 
+
+That way you still get the flavor you want, but the final mentor becomes **your** framework, not a collage of borrowed names. The structure also makes it much easier to build clean Markdown skills and routing logic on your local machine. [1]
+
+The next step should be to decide which 7 modes make v1, and then define each one with its trigger, tone, and output pattern.
+
+
+
+Is this exactly how you should build it: not one giant prompt, but a **layered prompt ladder** where each prompt creates the next layer of the system. That matches your file-based methodology, your preference for each file doing one job, and your need to avoid losing focus while building a complex mentor OS. [1]
+
+The best version is a staged build sequence where each prompt has one deliverable, one scope, and one dependency rule. In other words, prompt 1 defines the architecture, prompt 2 defines the mentor, prompt 3 defines the modes, prompt 4 defines the folder tree, prompt 5 defines the file contracts, and only then do you start generating actual Markdown files. [1][2]
+
+## Build logic
+
+You want these prompts to work like **scaffolding**, not inspiration. Each prompt should consume the output of the previous one, preserve already-made decisions, refuse to redesign settled layers unless instructed, and produce artifacts that can be turned directly into Markdown files or YAML configs. 
+
+That matters because your system is getting too large for ad hoc prompting. Once identity, modes, health rules, learning logic, brand logic, and AI-building logic all coexist, you need a chain that keeps the AI from reinventing the architecture every time. 
+
+## Layer sequence
+
+Here is the right order:
+
+| Layer | Purpose | Output |
+|---|---|---|
+| 1 | Define system purpose and constraints | mission, user, outcomes, boundaries  |
+| 2 | Define mentor archetype | archetype statement, constitution, tone  |
+| 3 | Define modes | mode names, triggers, responsibilities, voice  |
+| 4 | Define domain map | identity, habits, goals, learning, psychology, brand, health, AI building  |
+| 5 | Define folder architecture | top-level folders and relationships [3] |
+| 6 | Define file contracts | what each file must contain and not contain  |
+| 7 | Generate core files | mentor-identity, goals, scorecard, operating rules [4] |
+| 8 | Generate mode files | operator, enforcer, philosopher, teacher, etc.  |
+| 9 | Generate hooks and sessions | daily, weekly, stall detection, behavior interventions [1][5] |
+| 10 | Define runtime prompt assembly | how Claude/Gemini loads the right files per request [2][6] |
+
+That sequence is strong because it moves from abstract to concrete, from stable to variable, and from design to execution. [2]
+
+## Master rules
+
+Before the prompts themselves, you need one universal instruction block that is prepended to all build prompts. It should say that the system is Markdown-first, local-first, interpretable, layered, and built one artifact at a time; that previous decisions are source truth unless explicitly revised; that each file must do one job; and that outputs should be directly saveable as `.md` or `.yaml`. That reflects the architecture patterns you’ve already been using with global and project-level instruction files. [2][6]
+
+You can use this as your **global build prompt**:
+
+```md
+You are helping me build a local-first AI mentor and coach system using a layered folder-and-file architecture.
+
+Core rules:
+1. Treat previous approved outputs as source truth unless I explicitly ask to revise them.
+2. Build in layers. Do not skip ahead.
+3. Each file must do one job well.
+4. Prefer Markdown for human-readable guidance and YAML only where machine structure is needed.
+5. Keep the system interpretable, modular, and portable across Claude Code, Gemini CLI, Obsidian, and local scripts.
+6. Do not collapse multiple layers into one giant file.
+7. When generating output, produce artifacts I can save directly into files.
+8. When something is still undecided, surface the decision clearly instead of making hidden assumptions.
+9. Optimize for personal mentor/coaching use first, but keep the architecture extensible.
+10. Preserve distinctions between identity, behavior, strategy, health, learning, brand, and AI-building.
+```
+
+## Prompt set
+
+Below is the layered prompt chain.
+
+### Prompt 1
+
+Use this to define the system before any file generation:
+
+```md
+Using the approved project context, define the purpose of my AI mentor system in one clean specification.
+
+Output:
+1. Mission statement
+2. Primary user
+3. Core outcomes this mentor must help create
+4. Non-goals
+5. Safety and scope boundaries
+6. What makes this system different from a generic AI assistant
+7. A short design philosophy
+
+Constraints:
+- Make it specific to my actual needs: identity, habits, goals, strategy, learning, psychology, brand, community, manifestation through action, health practices, and building systems with AI.
+- Keep it practical, not mystical.
+- Do not generate folder structures yet.
+- End with a list of locked decisions and open decisions.
+```
+
+### Prompt 2
+
+Use this to define the mentor itself:
+
+```md
+Using the approved system specification, define the mentor archetype for this project.
+
+Output:
+1. Archetype name
+2. One-sentence archetype statement
+3. Mentor constitution
+4. Core values
+5. What this mentor does
+6. What this mentor refuses to do
+7. Tone and voice rules
+8. How the mentor should challenge me
+9. How the mentor should adapt across emotional, strategic, and execution contexts
+
+Constraints:
+- Make this a modern original archetype, not a copy of any public figure or fictional character.
+- It should feel wise, strategic, disciplined, psychologically aware, and builder-minded.
+- It should be suitable for a local Markdown-based mentor system.
+- End with a section titled “Approved archetype contract.”
+```
+
+### Prompt 3
+
+Use this to define modes:
+
+```md
+Using the approved mentor archetype, design the mentor’s mode system.
+
+Output:
+For each mode provide:
+1. Mode name
+2. Purpose
+3. Best use cases
+4. Trigger conditions
+5. Tone
+6. Questions this mode asks
+7. What this mode should avoid
+8. Output pattern
+
+Required modes to consider:
+- Operator
+- Enforcer
+- Philosopher
+- Psychologist
+- Teacher
+- Architect
+- Steward
+- Visionary
+- Strategist
+
+Constraints:
+- Use public figures only as invisible inspiration, not as names.
+- Recommend which 7 modes belong in v1 and which should wait.
+- End with a final mode table and routing notes.
+```
+
+### Prompt 4
+
+Use this to define the full domain map:
+
+```md
+Using the approved archetype and mode system, define the mentor’s domain architecture.
+
+Output:
+1. Top-level domains
+2. What belongs in each domain
+3. What does not belong in each domain
+4. Dependencies between domains
+5. Which domains are foundational and which are secondary
+6. Suggested order for building the domains
+
+Must account for:
+- identity
+- manifestation
+- habits
+- consistency
+- goals
+- planning
+- learning
+- psychology
+- brand
+- community
+- AI-building
+- health
+- reviews
+- sessions
+- hooks
+- memory
+- skills
+
+End with a final approved domain map.
+```
+
+### Prompt 5
+
+Use this to generate the folder tree:
+
+```md
+Using the approved domain map, create the top-level and second-level folder architecture for the mentor system.
+
+Output:
+1. Full folder tree
+2. One-sentence purpose for every folder
+3. Recommended naming convention
+4. Which folders hold source truth
+5. Which folders are generated
+6. Which folders are editable by me
+7. Which folders are append-only logs
+
+Constraints:
+- Optimize for Obsidian compatibility and local filesystem clarity.
+- Keep file names human-readable and AI-readable.
+- Do not generate file contents yet.
+- End with “Final folder architecture.”
+```
+
+### Prompt 6
+
+Use this to define file contracts:
+
+```md
+Using the approved folder architecture, define the contract for each core file type.
+
+Output:
+For each file type provide:
+1. File purpose
+2. Required sections
+3. Optional sections
+4. What never belongs in this file
+5. Update frequency
+6. Whether it is source truth, derivative, or log
+7. Example filenames
+
+Core file types:
+- identity files
+- mode files
+- goals files
+- scorecards
+- session files
+- hooks files
+- memory files
+- strategy files
+- health files
+- learning files
+- YAML config files
+
+End with a section called “File contract rules.”
+```
+
+### Prompt 7
+
+Use this to build the first real files:
+
+```md
+Using the approved architecture and file contracts, generate the first 10 core files for the mentor system.
+
+Required files:
+- mentor-identity.md
+- mentor-constitution.md
+- operating-rules.md
+- active-goals.md
+- scorecard.md
+- decision-framework.md
+- daily-clarity-session.md
+- weekly-reset-session.md
+- current-state.md
+- system-prompt.md
+
+Constraints:
+- Generate each file in full Markdown.
+- Each file must do one job only.
+- Preserve alignment with the approved archetype and domains.
+- Output one file at a time with clear file path headers.
+```
+
+### Prompt 8
+
+Use this to build the mode files:
+
+```md
+Using the approved mode system and file contracts, generate the v1 mode files in full Markdown.
+
+Include:
+- operator.md
+- enforcer.md
+- philosopher.md
+- psychologist.md
+- teacher.md
+- architect.md
+- steward.md
+
+For each file include:
+1. Identity of the mode
+2. When to use it
+3. Questions it asks
+4. Decision rules
+5. Response style
+6. Output template
+7. Escalation rules
+
+Output each as a save-ready Markdown file with file path headers.
+```
+
+### Prompt 9
+
+Use this to build hooks and workflows:
+
+```md
+Using the approved architecture, create the hook system for activating sessions and interventions.
+
+Output:
+1. Hook definitions
+2. Trigger conditions
+3. Inputs required
+4. Which files are loaded
+5. Which mode is preferred
+6. What output is produced
+7. Whether the result updates memory, logs, or scorecards
+
+Required hooks:
+- daily-checkin
+- weekly-review
+- goal-slip-detection
+- habit-streak-drop
+- project-stall
+- identity-drift
+- health-boundary-warning
+
+End with both Markdown hook docs and a minimal YAML routing schema.
+```
+
+### Prompt 10
+
+Use this to define runtime use in Claude and Gemini:
+
+```md
+Using the approved architecture, define how this mentor should be run locally with Claude Code and Gemini CLI.
+
+Output:
+1. Global instruction file strategy
+2. Project-level instruction file strategy
+3. How modes are loaded
+4. How session prompts are assembled
+5. Which files are always loaded
+6. Which files are loaded conditionally
+7. Example CLI workflow
+8. Example prompt assembly logic
+9. Guardrails for keeping context small and relevant
+
+Constraints:
+- Keep it Markdown-first.
+- Support Obsidian as the human editing layer.
+- Support local scripts and YAML routing.
+- End with a practical local runtime blueprint.
+```
+
+## How to use them
+
+Run these prompts in order and **do not skip layers**. After each response, save the approved output into your vault or project folder, then use that saved artifact as context for the next prompt instead of relying on chat memory alone, because your system works best when the files become the source truth. [6]
+
+Also, keep a small checkpoint note after each layer called something like `approved-decisions.md`. That file should record what is locked, what is still open, and what must not be reinvented by later prompts. That will dramatically reduce drift as the system expands. [1][2]
+
+## Recommended v1 path
+
+For your actual build, I would use prompts 1 through 6 first, stop, review, and only then start 7 through 10. That creates a clean architecture pass before content generation, which is important because once you start generating files too early, you end up rewriting everything later. [1]
+
+The smartest immediate next move is to run **Prompt 1**, approve it, then I help you run Prompt 2 with the decisions locked.
+
+
