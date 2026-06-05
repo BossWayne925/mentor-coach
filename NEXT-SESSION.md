@@ -6,7 +6,7 @@
 
 **Project:** Folder-based AI mentor focused on identity transformation. v1 ships a single-arc, single-voice mentor; designed as the first vertical slice of a larger mentor OS (sibling arcs + 7-mode system come in v2).
 
-**Phase:** Brainstorming. Foundation committed (git, content layer, decisions doc, README). **Section 1 of the design (top-level architecture) is approved.** Sections 2–5 still to do.
+**Phase:** Brainstorming. Foundation committed (git, content layer, decisions doc, README). **Section 1 (top-level architecture) and Section 3 (`me/` layer) are approved.** Sections 2, 4, 5 still to do.
 
 ## Read these four files in order
 
@@ -28,7 +28,7 @@
 These three were flagged at the end of session 01 build journal and need answers before Section 2/4 can be fully designed:
 
 1. Daily check-in cadence — morning + evening, or evening only?
-2. `me/values.md` shape — single doc, or split into "stated values" vs. "lived values" so the mentor can audit the gap?
+2. ~~`me/values.md` shape~~ — **resolved in Decision #09:** split into `values-stated.md` + `values-lived.md`.
 3. Should the mentor be allowed to refuse to engage if Wayne shows up dishonest? (My instinct: yes. Needs to live in `mentor/constitution.md`.)
 
 ## Conventions to follow next session

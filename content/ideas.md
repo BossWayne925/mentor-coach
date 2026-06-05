@@ -32,6 +32,22 @@ Statuses: `idea` → `drafting` → `recorded` → `published` → `archived`
   - Angle: the workflow of capturing clips while building, harvesting commits into videos.
   - Source: session 01 content-layer decision.
 
+- **"I wrote down my values. Then I wrote down what my actions say I value."**
+  - Angle: the stated vs. lived values exercise, done live on camera. Walk through the gap table. Be honest about where it hurts.
+  - Source: session 02 values split. This might be the best first video — it's personal, vulnerable, and immediately useful to anyone watching.
+
+- **"The 90% graveyard — why you don't have a finishing problem, you have a last-10% problem."**
+  - Angle: reframe quitting. Most people think they lack motivation. They actually lack a finishing system. Show the trigger and the coaching move.
+  - Source: session 02 triggers.md.
+
+- **"I built the most honest folder on my computer."**
+  - Angle: tour the 6 me/ files, explain what each one does, show how the AI mentor reads them. Build-in-public format.
+  - Source: session 02 me/ layer completion.
+
+- **"Learning isn't progress. Shipping is."**
+  - Angle: 60-second short. The difference between consuming information and producing output. One makes you feel smart, the other makes you grow.
+  - Source: session 02 values-lived gap (learning as comfort zone).
+
 ## drafting
 
 *(nothing yet)*
