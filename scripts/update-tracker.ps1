@@ -214,7 +214,112 @@ $patternBlock
 "@
 }
 
-# --- Main entry point (only runs when invoked directly, not dot-sourced) ---
+# Builds the weekly summary markdown for a given ISO week.
+function New-WeeklySummary {
+    param([array]$Sessions, [string]$CommitmentsFile, [int]$ISOWeek, [int]$Year)
+
+    $weekTag     = "W$($ISOWeek.ToString('D2'))"
+    $weekTable   = Get-WeeklyTable $Sessions $ISOWeek $Year
+    $pvd         = Get-PlanVsDone $Sessions
+    $patterns    = Get-Patterns $Sessions
+    $commitLines = Get-CommitmentLines $CommitmentsFile
+
+    $doneCount  = ($commitLines | Where-Object { $_ -match '\[x\]' }).Count
+    $totalCount = $commitLines.Count
+    $pct        = if ($totalCount -gt 0) { [math]::Floor($doneCount / $totalCount * 100) } else { 0 }
+    $commitBlock = if ($commitLines.Count -gt 0) { $commitLines -join "`n" } else { "(none)" }
+
+    $patternBlock = if ($patterns.Count -gt 0) {
+        ($patterns | ForEach-Object { "- $_" }) -join "`n"
+    } else {
+        "- None"
+    }
+
+    $weekSessions = @($Sessions | Where-Object {
+        try {
+            $d = [datetime]$_.date
+            [System.Globalization.ISOWeek]::GetWeekOfYear($d) -eq $ISOWeek -and $d.Year -eq $Year
+        } catch { $false }
+    })
+
+    return @"
+---
+week: $Year-$weekTag
+generated: $(Get-Date -Format 'yyyy-MM-ddTHH:mm:ss')
+sessions: $($weekSessions.Count)
+---
+
+# Week $weekTag Summary ($Year)
+
+## Score record
+$weekTable
+
+## Commitments — final state
+$commitBlock
+
+Completion: $doneCount/$totalCount ($pct%)
+
+## Plan vs. done
+Tasks planned: $($pvd.Planned) | Tasks done: $($pvd.Done) | Hit rate: $($pvd.HitRate)%
+
+## Top pattern this week
+$patternBlock
+
+## Carry into next week
+(Fill in during Sunday weekly review session.)
+"@
+}
+
+# --- Main entry point ---
+function Main {
+    param([string]$ProjectRoot = "$PSScriptRoot/..")
+
+    $ProjectRoot     = Resolve-Path $ProjectRoot
+    $sessionsDir     = Join-Path $ProjectRoot "logs/sessions"
+    $weeksDir        = Join-Path $ProjectRoot "logs/weeks"
+    $trackerFile     = Join-Path $ProjectRoot "logs/tracker.md"
+    $commitmentsFile = Join-Path $ProjectRoot "goals/weekly-commitments.md"
+
+    # Check if invoked by hook — read stdin for tool use context
+    if ([Console]::IsInputRedirected) {
+        $stdinRaw = [Console]::In.ReadToEnd().Trim()
+        if ($stdinRaw) {
+            try {
+                $hookData    = $stdinRaw | ConvertFrom-Json
+                $writtenPath = $hookData.tool_input.file_path
+                # Only process if the written file is a session log
+                if ($writtenPath -notmatch [regex]::Escape("logs") + "[/\\]sessions[/\\]") {
+                    exit 0
+                }
+            } catch {
+                # JSON parse failed — run unconditionally
+            }
+        }
+    }
+
+    # Load sessions
+    $sessions = Get-AllSessions $sessionsDir
+
+    # Regenerate tracker.md
+    $trackerContent = New-TrackerContent $sessions $commitmentsFile
+    Set-Content $trackerFile $trackerContent -Encoding UTF8
+    Write-Host "tracker.md updated ($($sessions.Count) sessions)"
+
+    # If the most recent session is a weekly-review, also generate the weekly summary
+    $lastSession = $sessions | Sort-Object { [datetime]$_.date } -Descending | Select-Object -First 1
+    if ($lastSession -and $lastSession.type -eq 'weekly-review') {
+        $d       = [datetime]$lastSession.date
+        $isoWeek = [System.Globalization.ISOWeek]::GetWeekOfYear($d)
+        $year    = $d.Year
+        $weekTag = "W$($isoWeek.ToString('D2'))"
+
+        $summaryContent = New-WeeklySummary $sessions $commitmentsFile $isoWeek $year
+        $summaryFile    = Join-Path $weeksDir "$year-$weekTag.md"
+        Set-Content $summaryFile $summaryContent -Encoding UTF8
+        Write-Host "Weekly summary written: $summaryFile"
+    }
+}
+
 if ($MyInvocation.InvocationName -ne '.') {
-    # Placeholder — implemented in Task 5
+    Main
 }
