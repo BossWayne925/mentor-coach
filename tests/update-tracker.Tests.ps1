@@ -131,3 +131,37 @@ Describe "Get-Patterns" {
         $result | Should -Contain "Comfort zone won 3 consecutive evenings"
     }
 }
+
+Describe "Get-WeeklyTable" {
+    It "returns a markdown table string" {
+        $sessions = Get-AllSessions "$fixturesDir"
+        $result = Get-WeeklyTable $sessions 23 2026
+        $result | Should -Match '\| Day \| Morning \| Evening \| Score \|'
+    }
+
+    It "marks logged days correctly" {
+        $sessions = Get-AllSessions "$fixturesDir"
+        $result = Get-WeeklyTable $sessions 23 2026
+        # 2026-06-06 is Saturday of W23, evening score: becoming
+        $result | Should -Match 'Sat.*logged.*becoming'
+    }
+
+    It "marks missing sessions with dash" {
+        $sessions = Get-AllSessions "$fixturesDir"
+        $result = Get-WeeklyTable $sessions 23 2026
+        $result | Should -Match 'Mon.*—.*—.*—'
+    }
+}
+
+Describe "New-TrackerContent" {
+    It "includes all required sections" {
+        $sessions = Get-AllSessions "$fixturesDir"
+        $commitmentsFile = "$PSScriptRoot/../goals/weekly-commitments.md"
+        $result = New-TrackerContent $sessions $commitmentsFile
+        $result | Should -Match '# Tracker'
+        $result | Should -Match '## Current streak'
+        $result | Should -Match '## This week'
+        $result | Should -Match '## Weekly commitments'
+        $result | Should -Match '## Plan vs. done'
+    }
+}

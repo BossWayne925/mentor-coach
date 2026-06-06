@@ -104,6 +104,116 @@ function Get-Patterns {
     return $patterns
 }
 
+# Builds the week table rows for a given ISO week number and year.
+function Get-WeeklyTable {
+    param([array]$Sessions, [int]$ISOWeek, [int]$Year)
+
+    # .NET DayOfWeek: Sunday=0, Monday=1 ... Saturday=6
+    $days = [ordered]@{
+        Mon = 1; Tue = 2; Wed = 3; Thu = 4; Fri = 5; Sat = 6; Sun = 0
+    }
+
+    $lines = @(
+        "| Day | Morning | Evening | Score |",
+        "|-----|---------|---------|-------|"
+    )
+
+    foreach ($day in $days.Keys) {
+        $dotNetDay = $days[$day]
+        $daySessions = @($Sessions | Where-Object {
+            try {
+                $d = [datetime]$_.date
+                [System.Globalization.ISOWeek]::GetWeekOfYear($d) -eq $ISOWeek -and
+                $d.Year -eq $Year -and
+                [int]$d.DayOfWeek -eq $dotNetDay
+            } catch { $false }
+        })
+
+        $morning   = if ($daySessions | Where-Object { $_.type -eq 'morning' }) { 'logged' } else { '—' }
+        $eveningSess = $daySessions | Where-Object { $_.type -eq 'evening' } | Select-Object -First 1
+        $evening   = if ($eveningSess) { 'logged' } else { '—' }
+        $score     = if ($eveningSess) { $eveningSess.score } else { '—' }
+
+        $lines += "| $day | $morning | $evening | $score |"
+    }
+
+    return $lines -join "`n"
+}
+
+# Reads the [x] checkboxes from weekly-commitments.md to get completion state.
+function Get-CommitmentLines {
+    param([string]$CommitmentsFile)
+
+    if (-not (Test-Path $CommitmentsFile)) { return @() }
+    $content = Get-Content $CommitmentsFile
+    return @($content | Where-Object { $_ -match '^\d+\. \[[ x]\]' })
+}
+
+# Builds the full tracker.md content string from sessions and commitment state.
+function New-TrackerContent {
+    param([array]$Sessions, [string]$CommitmentsFile)
+
+    $now        = Get-Date -Format "yyyy-MM-ddTHH:mm:ss"
+    $count      = $Sessions.Count
+    $streak     = Get-CurrentStreak $Sessions
+    $pvd        = Get-PlanVsDone $Sessions
+    $patterns   = Get-Patterns $Sessions
+
+    # Determine current week from today
+    $today   = Get-Date
+    $isoWeek = [System.Globalization.ISOWeek]::GetWeekOfYear($today)
+    $year    = $today.Year
+    $weekTag = "W$($isoWeek.ToString('D2'))"
+
+    $weekTable = Get-WeeklyTable $Sessions $isoWeek $year
+
+    # Last comfort-zone-won date
+    $evenings    = @($Sessions | Where-Object { $_.type -eq 'evening' } | Sort-Object { [datetime]$_.date } -Descending)
+    $lastCZWObj  = $evenings | Where-Object { $_.score -eq 'comfort-zone-won' } | Select-Object -First 1
+    $lastCZW     = if ($lastCZWObj) { $lastCZWObj.date } else { 'none' }
+
+    # Commitments
+    $commitLines = Get-CommitmentLines $CommitmentsFile
+    $doneCount   = ($commitLines | Where-Object { $_ -match '\[x\]' }).Count
+    $totalCount  = $commitLines.Count
+    $pct         = if ($totalCount -gt 0) { [math]::Floor($doneCount / $totalCount * 100) } else { 0 }
+    $commitBlock = if ($commitLines.Count -gt 0) { $commitLines -join "`n" } else { "(no commitments loaded)" }
+
+    # Patterns
+    $patternBlock = if ($patterns.Count -gt 0) {
+        ($patterns | ForEach-Object { "- $_" }) -join "`n"
+    } else {
+        "- None detected"
+    }
+
+    return @"
+---
+generated: $now
+sessions-logged: $count
+---
+
+# Tracker
+
+## Current streak
+Becoming: $streak days
+Last comfort-zone-won: $lastCZW
+
+## This week ($weekTag)
+$weekTable
+
+## Weekly commitments ($weekTag)
+$commitBlock
+
+Completion: $doneCount/$totalCount ($pct%)
+
+## Plan vs. done (all sessions)
+Tasks planned: $($pvd.Planned) | Tasks done: $($pvd.Done) | Hit rate: $($pvd.HitRate)%
+
+## Patterns flagged
+$patternBlock
+"@
+}
+
 # --- Main entry point (only runs when invoked directly, not dot-sourced) ---
 if ($MyInvocation.InvocationName -ne '.') {
     # Placeholder — implemented in Task 5
