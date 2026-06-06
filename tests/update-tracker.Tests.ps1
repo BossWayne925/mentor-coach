@@ -44,3 +44,90 @@ Describe "Get-SessionFrontmatter" {
         Remove-Item $tempFile.FullName
     }
 }
+
+Describe "Get-AllSessions" {
+    It "returns sessions sorted by date ascending" {
+        $sessions = Get-AllSessions "$fixturesDir"
+        $sessions.Count | Should -Be 3
+        $sessions[0].date | Should -Be "2026-06-06"
+        $sessions[2].date | Should -Be "2026-06-07"
+    }
+
+    It "includes both morning and evening types" {
+        $sessions = Get-AllSessions "$fixturesDir"
+        $types = $sessions | ForEach-Object { $_.type }
+        $types | Should -Contain "morning"
+        $types | Should -Contain "evening"
+    }
+}
+
+Describe "Get-CurrentStreak" {
+    It "returns 1 when the most recent evening is becoming" {
+        $sessions = Get-AllSessions "$fixturesDir"
+        # most recent evening is mixed (2026-06-07), so streak = 0
+        $streak = Get-CurrentStreak $sessions
+        $streak | Should -Be 0
+    }
+
+    It "returns count of consecutive becoming evenings from most recent" {
+        $fakeSessions = @(
+            @{ date = "2026-06-05"; type = "evening"; score = "becoming" },
+            @{ date = "2026-06-06"; type = "evening"; score = "becoming" },
+            @{ date = "2026-06-07"; type = "evening"; score = "becoming" }
+        )
+        Get-CurrentStreak $fakeSessions | Should -Be 3
+    }
+
+    It "stops counting at first non-becoming" {
+        $fakeSessions = @(
+            @{ date = "2026-06-05"; type = "evening"; score = "comfort-zone-won" },
+            @{ date = "2026-06-06"; type = "evening"; score = "becoming" },
+            @{ date = "2026-06-07"; type = "evening"; score = "becoming" }
+        )
+        Get-CurrentStreak $fakeSessions | Should -Be 2
+    }
+
+    It "returns 0 when no evening sessions exist" {
+        $fakeSessions = @(
+            @{ date = "2026-06-06"; type = "morning" }
+        )
+        Get-CurrentStreak $fakeSessions | Should -Be 0
+    }
+}
+
+Describe "Get-PlanVsDone" {
+    It "returns planned, done, and hit rate" {
+        $sessions = Get-AllSessions "$fixturesDir"
+        $result = Get-PlanVsDone $sessions
+        $result.Planned  | Should -Be 6   # 3 + 3 across two evenings
+        $result.Done     | Should -Be 4   # 3 + 1 across two evenings
+        $result.HitRate  | Should -Be 66  # floor(4/6 * 100) = floor(66.67) = 66
+    }
+
+    It "returns zeros when no evening sessions" {
+        $result = Get-PlanVsDone @(@{ type = "morning" })
+        $result.Planned | Should -Be 0
+        $result.Done    | Should -Be 0
+        $result.HitRate | Should -Be 0
+    }
+}
+
+Describe "Get-Patterns" {
+    It "returns empty array when no patterns" {
+        $fakeSessions = @(
+            @{ date = "2026-06-06"; type = "evening"; score = "becoming" }
+        )
+        $result = Get-Patterns $fakeSessions
+        $result | Should -BeNullOrEmpty
+    }
+
+    It "flags comfort-zone-won streak of 3 or more" {
+        $fakeSessions = @(
+            @{ date = "2026-06-04"; type = "evening"; score = "comfort-zone-won" },
+            @{ date = "2026-06-05"; type = "evening"; score = "comfort-zone-won" },
+            @{ date = "2026-06-06"; type = "evening"; score = "comfort-zone-won" }
+        )
+        $result = Get-Patterns $fakeSessions
+        $result | Should -Contain "Comfort zone won 3 consecutive evenings"
+    }
+}
