@@ -62,7 +62,7 @@ Describe "Get-AllSessions" {
 }
 
 Describe "Get-CurrentStreak" {
-    It "returns 1 when the most recent evening is becoming" {
+    It "returns 0 when the most recent evening is not becoming" {
         $sessions = Get-AllSessions "$fixturesDir"
         # most recent evening is mixed (2026-06-07), so streak = 0
         $streak = Get-CurrentStreak $sessions
