@@ -4,7 +4,7 @@ A local-first, folder-based AI mentor focused on **identity transformation** —
 
 > **Building in public.** Every commit is a timestamped journal entry. The build journal, content seeds, and decision log are all in this repo. Follow along or fork it and build your own.
 
-> Status: **v1 in design** (started 2026-06-05). Sections 1-4 complete. Runtime layer (Section 5) in progress.
+> Status: **v1 design complete** (started 2026-06-05). All 5 sections built. Ready for first use.
 
 ## Why this exists
 
@@ -41,6 +41,7 @@ Built on principles from identity-based habits, future-self psychology, and cogn
 | `goals/` | Active arc, 90-day targets, weekly commitments, if-then plans | 4 |
 | `skills/` | Coaching moves — score-the-day, challenge-distortion, slip-recovery, finish-push, study-or-stall, future-self-pull, if-then-deploy | 7 |
 | `hooks/` | Triggered routines — morning check-in, evening check-in, weekly review, slip detected | 4 |
+| `rules/` | Non-negotiable behavioral constraints — coach-not-lecture, pushback-style, markdown-discipline | 3 |
 | `content/` | Build journal, clips, video ideas, lessons — the build IS the content | 4 |
 | `docs/` | Architecture decisions (ADRs) and locked decisions register | 4 |
 | `logs/` | Append-only session records *(coming in v1.5)* | — |
