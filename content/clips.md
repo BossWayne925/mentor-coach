@@ -53,3 +53,23 @@ Extracted soundbites, frameworks, and one-liners worth a video, post, or hook. P
 
 > **"The hardest part of building an AI coach wasn't the AI. It was being honest enough to fill the me/ folder."**
 > *Source: session 03 — callback to session 02. Vulnerability + technical build.*
+
+## 2026-06-05 (session 04)
+
+> **"The line between tough love and tearing someone down is respect."**
+> *Source: session 04 — pushback-style rule design. Universal truth about coaching.*
+
+> **"I built the control system for my AI mentor. One file turns a generic AI into a specific coach."**
+> *Source: session 04 — CLAUDE.md as runtime entry point. Build-in-public hook.*
+
+> **"Questions before answers. That's the rule. A mentor who lectures is an audiobook."**
+> *Source: session 04 — coach-not-lecture rule. Strong YouTube short.*
+
+> **"My AI mentor has a 3-step escalation before it fires me as a client."**
+> *Source: session 04 — refusal protocol evolution. Provocative, builds on session 03 clip.*
+
+> **"V1 is done. 35 files. Now comes the hard part — actually using it."**
+> *Source: session 04 — design completion. The building-vs-doing tension.*
+
+> **"I reviewed my own architecture and found 5 things wrong. That's not failure — that's the process."**
+> *Source: session 04 — self-audit as content. Build-in-public honesty.*

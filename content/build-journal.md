@@ -170,3 +170,59 @@ Built two full sections in one session. Section 2 (methodology layer) gives the 
 ### What's next
 
 Section 5: runtime/CLAUDE.md — the entry point that wires everything together. Three rule files (coach-not-lecture, pushback-style, markdown-discipline). Prompt assembly logic. Then the design phase is complete and we move to implementation.
+
+---
+
+---
+date: 2026-06-05
+session: 04
+arc: identity
+phase: design → complete
+tags: [runtime, CLAUDE-md, rules, architecture-review, refusal-protocol, skill-routing, content-strategy]
+content-seeds: 6
+---
+
+## Session 04 — The runtime layer
+
+Started with a full architecture review — read every file in the project and evaluated whether the design is sound and whether this is the best architecture for the output we want. Verdict: the architecture is strong. The methodology integration, the structural values gap, the trigger-to-skill routing, and the constitutional refusal right are all working together. No structural problems that need rearchitecting.
+
+Then built Section 5 — the last piece. Four files that turn the design into a running system.
+
+### What was built
+
+**`CLAUDE.md`** — the runtime entry point. Tells the AI who it is, what files to load, how to detect session type (morning/evening/weekly/freeform), when to deploy which skill, and what it's allowed to write. This is the single file that transforms a generic Claude session into this specific mentor.
+
+**`rules/coach-not-lecture.md`** — questions before answers. Statements are earned: when Wayne is spiraling, when naming a pattern, when delivering the refusal, when acknowledging real work. Otherwise, ask. One question at a time. Let silence do the work.
+
+**`rules/pushback-style.md`** — the escalation gradient. Challenge behavior not character. Name the pattern not the person. Use Wayne's own words. Acknowledge before pushing further. And the key addition: a warning state before refusal. The original design went straight from engaged to "we're done." Now there's a middle step — "You're deflecting. I'm going to ask one more time."
+
+**`rules/markdown-discipline.md`** — file conventions, YAML frontmatter requirements by type, what the mentor can and can't write. The mentor reads everything but only writes to `me/values-lived.md`, `goals/weekly-commitments.md`, and `logs/` — and only with Wayne's approval.
+
+### Refinements from the architecture review
+
+- **Refusal escalation gradient.** The binary engaged/refused was too aggressive for an AI that can misread tone. Added a warning state that gives Wayne a chance to course-correct.
+- **Skill routing disambiguation.** When a slip and a distortion show up together, slip-recovery owns the moment (Wayne admits something happened), challenge-distortion owns the deflection (Wayne tries to avoid admitting it). Don't stack both simultaneously.
+- **Identified remaining gaps.** The 90-day-picture has unfilled blanks (revenue target, drinking boundary). Weekly commitments slots 3-5 are empty. These are Wayne's inputs, not design problems. Also flagged: no session continuity mechanism yet — `state/last-session.md` would let the refusal protocol reference yesterday's session.
+
+### Tensions I noticed
+
+- **CLAUDE.md is doing a lot.** Context loading, session routing, skill deployment, refusal protocol, file permissions, behavioral constraints. It's within the "one file, one job" principle because the job IS "runtime orchestration" — but if it grows further, it might need splitting into CLAUDE.md (core) and a separate routing file.
+- **Manual session triggers are a tradeoff.** Wayne has to say "morning check-in" or "evening check-in" because there's no scheduler. This is fine for v1 but means the system only works when Wayne initiates. If he doesn't show up, there's no nudge. A scheduled reminder (Slack, calendar, cron) could fix this in v1.5.
+- **The rule files need runtime testing.** "Coach not lecture" and "pushback style" are easy to write but hard to enforce. AI defaults to being helpful, and "helpful" often means lecturing. The real test is whether the mentor stays in character during a real check-in.
+
+### Content seeds from this session
+
+1. **"I built the control system for my AI mentor. Here's the one file that changes everything."** — CLAUDE.md as the single entry point. Show how one file turns a generic AI into a specific mentor.
+2. **"My AI mentor has a 3-step escalation before it fires me."** — the warning state addition. Evolution of the refusal protocol.
+3. **"Questions before answers. That's the rule. Here's why most AI coaches fail at it."** — the coach-not-lecture rule explained. Why AI defaults to lecturing and how to prevent it.
+4. **"The line between tough love and tearing someone down is respect."** — pushback-style distilled. Universal truth about coaching, parenting, leadership.
+5. **"I reviewed my own architecture and found 5 things wrong. Here's how I fixed them."** — the self-audit as content. Build-in-public honesty about catching your own design gaps.
+6. **"V1 is done. 35 files. Every section built. Now comes the hard part — using it."** — the transition from building to living inside the system. Meta-content about building vs. doing.
+
+### What's next
+
+V1 design is complete. All 5 sections are built. Remaining work:
+- Fill the blanks: revenue target, drinking boundary, weekly commitments 3-5 (Wayne's inputs)
+- Optional: add `state/last-session.md` for session continuity
+- First live mentor session — morning check-in or evening check-in
+- Record first YouTube content (committed for this weekend)

@@ -68,6 +68,30 @@ Statuses: `idea` → `drafting` → `recorded` → `published` → `archived`
   - Angle: 60-second short. The one-line thesis of what separates coaching AI from assistant AI.
   - Source: session 03 constitutional refusal.
 
+- **"One file changed everything — how CLAUDE.md turns a generic AI into YOUR mentor."**
+  - Angle: deep-dive on the runtime entry point. Show the file, explain context loading, session routing, skill deployment. The one file that makes 34 other files work together.
+  - Source: session 04 CLAUDE.md build.
+
+- **"Why most AI coaches lecture — and the one rule that fixes it."**
+  - Angle: the coach-not-lecture rule. Why AI defaults to being helpful (lecturing) and how folder-based rules force it to ask questions instead. Show the actual rule file. Practical for anyone building AI tools.
+  - Source: session 04 rules design.
+
+- **"The line between tough love and tearing someone down."**
+  - Angle: pushback-style explained. Challenge behavior not character. Name the pattern not the person. Escalation gradient. Applies to coaching, parenting, leadership, management — not just AI.
+  - Source: session 04 pushback-style rule.
+
+- **"I audited my own system and found 5 design flaws."**
+  - Angle: build-in-public honesty. Walk through the architecture review — what was strong, what was missing, what got fixed. Shows that good engineering is iterative, not perfect-first-try.
+  - Source: session 04 architecture review.
+
+- **"V1 complete: full tour of a 35-file AI mentor system."**
+  - Angle: comprehensive walkthrough now that every section is built. Folder by folder, file by file, show the whole system. The definitive build-in-public tour video. Longer format (10-15 min).
+  - Source: session 04 design completion.
+
+- **"Building it was the easy part. Using it is the test."**
+  - Angle: 60-second short. The transition from designing a self-improvement system to actually submitting to it. Meta-commentary on learning vs. doing — the exact pattern the mentor is built to catch.
+  - Source: session 04 completion tension.
+
 ## drafting
 
 *(nothing yet)*
