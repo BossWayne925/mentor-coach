@@ -226,3 +226,55 @@ V1 design is complete. All 5 sections are built. Remaining work:
 - Optional: add `state/last-session.md` for session continuity
 - First live mentor session — morning check-in or evening check-in
 - Record first YouTube content (committed for this weekend)
+
+---
+
+---
+date: 2026-06-05
+session: 05
+arc: identity
+phase: complete → operational
+tags: [goals, commitments, focus, 1-1-1-strategy, drinking-zero, revenue-target, content-strategy]
+content-seeds: 5
+---
+
+## Session 05 — The commitments
+
+Short session. Filled every blank in the system. The mentor now has hard edges everywhere it needs them.
+
+### What was decided
+
+**Revenue target: $5,000/month by September 4.** Not "make some money" — a number the mentor can hold Wayne to. That's the line between a hobby with an LLC and a business.
+
+**Drinking: zero.** Not "reduced." Not "weekends only." Done. Wayne didn't hedge on this. He said zero and meant it. The mentor now has a binary to enforce — any drinking is a slip, not a gray area.
+
+**1 offer, 1 avatar, 1 channel for 90 days.** This is the strategic constraint that makes everything else possible. YouTube is the channel. One offer (AI workstations for SMBs). One target customer. No shiny-object pivots for 90 days. The weekly commitments all trace back to this.
+
+### Weekly commitments filled (5 of 5)
+
+1. Shoot first YouTube videos
+2. Complete mentor coach build — run a live session
+3. Define the 1 offer: what EBC sells, to whom, at what price
+4. Map content strategy: first 4 video topics locked, filming schedule set
+5. Build one business system (CRM, outreach template, or client onboarding)
+
+All pass/fail. All connect to the 1-1-1 strategy. The mentor scores these Sunday.
+
+### Why this matters
+
+The blanks were the last soft edges in the system. A mentor that can't name the boundary can't enforce it. "Reduce drinking" is a suggestion. "Zero" is a commitment. "$5,000/month" is a number you either hit or you don't. The 1-1-1 constraint kills the start-stop pattern by removing the option to pivot — there's nothing new to chase because the strategy is locked for 90 days.
+
+### Content seeds from this session
+
+1. **"1 offer. 1 avatar. 1 channel. 90 days. That's the whole strategy."** — the constraint as clarity. Strong hook for a video about focus vs. optionality.
+2. **"I didn't say 'reduce drinking.' I said zero. There's a difference."** — the commitment-vs-suggestion distinction. Raw, personal, powerful.
+3. **"A mentor that can't name the boundary can't enforce it."** — the reason blanks kill systems. Applies to AI, management, self-discipline.
+4. **"$5,000 a month. That's the number. Now every decision has a filter."** — how a specific revenue target changes daily choices. Business content angle.
+5. **"The system is done. Every blank is filled. Now there are no more excuses to build instead of do."** — the meta-moment. The builder-vs-doer tension resolved.
+
+### What's next
+
+- Push to remote — build-in-public only works when it's public
+- First live mentor session (morning or evening check-in)
+- Start filming this weekend
+- Sunday: first weekly review scores the 5 commitments

@@ -92,6 +92,22 @@ Statuses: `idea` → `drafting` → `recorded` → `published` → `archived`
   - Angle: 60-second short. The transition from designing a self-improvement system to actually submitting to it. Meta-commentary on learning vs. doing — the exact pattern the mentor is built to catch.
   - Source: session 04 completion tension.
 
+- **"1 offer. 1 avatar. 1 channel. Why I'm locking my strategy for 90 days."**
+  - Angle: the anti-shiny-object video. Why constraints create clarity. Show how the 1-1-1 rule filters every decision — what to film, who to reach out to, what to build. Viewers can apply the same constraint to their own business.
+  - Source: session 05 strategic commitment.
+
+- **"I quit drinking. Here's how my AI mentor holds me to it."**
+  - Angle: the zero-vs-reduced distinction. Why vague commitments fail and binary ones stick. Show the actual 90-day-picture file with the hard boundary. Personal, vulnerable, builds trust with audience.
+  - Source: session 05 drinking commitment.
+
+- **"How I turned a revenue dream into a revenue filter."**
+  - Angle: $5K/month isn't just a goal — it's a decision-making tool. Every choice this week either moves toward that number or doesn't. Show how a specific target eliminates ambiguity. Business content for solopreneurs.
+  - Source: session 05 revenue target.
+
+- **"From building to doing — the moment the excuses ran out."**
+  - Angle: the meta-moment where the system is done and there's nothing left to build. The start-stop pattern's ultimate test — will he use the system or start building the next thing? Honest, self-aware, relatable to any builder.
+  - Source: session 05 operational transition.
+
 ## drafting
 
 *(nothing yet)*

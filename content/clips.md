@@ -73,3 +73,20 @@ Extracted soundbites, frameworks, and one-liners worth a video, post, or hook. P
 
 > **"I reviewed my own architecture and found 5 things wrong. That's not failure — that's the process."**
 > *Source: session 04 — self-audit as content. Build-in-public honesty.*
+
+## 2026-06-05 (session 05)
+
+> **"1 offer. 1 avatar. 1 channel. 90 days. That's the whole strategy."**
+> *Source: session 05 — 1-1-1 constraint. YouTube short on focus vs. optionality.*
+
+> **"I didn't say 'reduce drinking.' I said zero. There's a difference."**
+> *Source: session 05 — drinking commitment. Raw, personal, no hedging.*
+
+> **"A mentor that can't name the boundary can't enforce it."**
+> *Source: session 05 — why blanks kill systems. Applies to AI, leadership, self-discipline.*
+
+> **"$5,000 a month. That's the number. Now every decision has a filter."**
+> *Source: session 05 — revenue target set. Business clarity content.*
+
+> **"The system is done. Every blank is filled. Now there are no more excuses to build instead of do."**
+> *Source: session 05 — operational transition. The builder-vs-doer tension.*

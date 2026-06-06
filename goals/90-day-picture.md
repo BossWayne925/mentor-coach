@@ -11,13 +11,13 @@ last-reviewed: 2026-06-06
 
 ## By September 4, Wayne has:
 
-### Business (EBC)
+### Business (EBC) — 1 offer, 1 avatar, 1 channel
 - [ ] AI operating system / workstation offering defined, priced, and sold to at least 2 SMB clients
 - [ ] Website purpose clarified and live (lead gen? portfolio? content hub?)
 - [ ] Cold outreach system in place — even if uncomfortable, it's happening
-- [ ] Revenue target: _________ (Wayne to set — needs to be specific)
+- [ ] Revenue target: $5,000/month by end of 90 days
 
-### Content
+### Content — YouTube is the 1 channel
 - [ ] First YouTube videos published (shooting this weekend)
 - [ ] Publishing cadence established — at minimum 1 video per week for 8+ consecutive weeks
 - [ ] Newsletter launched
@@ -26,7 +26,7 @@ last-reviewed: 2026-06-06
 ### Personal
 - [ ] Morning routine from `me/becoming.md` is default at least 5 days/week
 - [ ] Intermittent fasting consistent
-- [ ] Drinking with friends reduced to _______ (Wayne to set boundary)
+- [ ] Drinking: zero. Not reduced. Done.
 - [ ] Evening reflection happening daily
 
 ### Identity
