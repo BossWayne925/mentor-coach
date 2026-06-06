@@ -108,6 +108,30 @@ Statuses: `idea` → `drafting` → `recorded` → `published` → `archived`
   - Angle: the meta-moment where the system is done and there's nothing left to build. The start-stop pattern's ultimate test — will he use the system or start building the next thing? Honest, self-aware, relatable to any builder.
   - Source: session 05 operational transition.
 
+- **"How I gave my AI mentor persistent memory — with Markdown, YAML, and a PowerShell hook."**
+  - Angle: full technical walkthrough of the memory layer. Session logs + YAML frontmatter + update-tracker.ps1 + PostToolUse hook. Show the code, show the tracker output, show a real session log. The builder audience that watches "how to use Claude Code" videos.
+  - Source: session 06 build.
+
+- **"The PostToolUse hook — Claude Code's most powerful hidden feature."**
+  - Angle: deep-dive on the hook system. What it is, how to wire it, what you can build with it (automation triggers, computed files, notifications). Show the stdin JSON pattern and why the path check matters. Practical, technical, immediately useful.
+  - Source: session 06 hook wiring.
+
+- **"Why I use TDD for personal productivity scripts."**
+  - Angle: counterintuitive framing. Most people think unit tests are for production software. But if a script tracks your daily behavior and has a bug, it corrupts your own history. 21 tests on a PowerShell script — walk through the key tests, show what they caught, explain why it's worth the overhead.
+  - Source: session 06 Pester test suite.
+
+- **"YAML frontmatter is the secret to human-AND-machine-readable files."**
+  - Angle: the pattern behind the session log design. How one file can be a journal entry (body) and a database row (frontmatter) simultaneously. Apply this to journaling, note-taking, personal productivity. Short, focused, immediately applicable.
+  - Source: session 06 structured log design.
+
+- **"Subagent-driven development: how I built a 7-task feature with zero context pollution."**
+  - Angle: the development methodology from this session. Fresh subagent per task, spec compliance review, then code quality review. Show the loop: dispatch → implement → review → fix → approve. Two bugs caught that would have slipped through without the review gates.
+  - Source: session 06 development process.
+
+- **"Sessions 01–06: building an AI mentor from scratch. The complete arc."**
+  - Angle: compilation / retrospective. 6 sessions, 6 journal entries, 37+ files, one operational AI mentor with persistent memory. Walk the arc: problem → me-layer → methodology → runtime → commitments → memory. This is the video that makes someone binge the series.
+  - Source: sessions 01–06. This is the cornerstone content.
+
 ## drafting
 
 *(nothing yet)*

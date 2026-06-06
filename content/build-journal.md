@@ -278,3 +278,75 @@ The blanks were the last soft edges in the system. A mentor that can't name the 
 - First live mentor session (morning or evening check-in)
 - Start filming this weekend
 - Sunday: first weekly review scores the 5 commitments
+
+---
+
+---
+date: 2026-06-06
+session: 06
+arc: identity
+phase: operational → persistent
+tags: [memory, tracking, automation, hooks, pester, tdd, powershell, session-logs, tracker]
+content-seeds: 7
+---
+
+## Session 06 — The memory layer
+
+The system was operational but amnesiac. Every coaching session started cold. Every day score, every honest moment, every commitment result — gone when the conversation closed. The mentor had no evidence of what actually happened. Pattern recognition was impossible. Accountability was theater.
+
+This session built the memory.
+
+### What was built
+
+**Session log files** (`logs/sessions/YYYY-MM-DD-{morning|evening}.md`) — structured markdown with YAML frontmatter. Morning logs capture top-3 tasks, carry-forward items, energy level. Evening logs capture score (becoming/mixed/comfort-zone-won), planned vs. done tasks, which weekly commitments were touched, whether a slip happened, which coaching skills fired.
+
+The mentor drafts the log at session end. Wayne reads it, approves or edits, then says write it. The file hits the disk. From there, automation takes over.
+
+**`scripts/update-tracker.ps1`** — 8-function PowerShell script that reads every session log, computes the state of the coaching relationship, and writes `logs/tracker.md`. Functions: frontmatter parser, session aggregator, streak counter, plan-vs-done calculator, pattern detector, ISO week table builder, commitment line reader, full tracker assembler. One script. One output. No manual step.
+
+**PostToolUse hook** (`.claude/settings.json`) — watches for Write tool calls. When a session log is saved, the hook fires the script automatically. The mentor never has to remember to run it. Save the log → tracker updates.
+
+**`logs/tracker.md`** — the live computed scorecard. Streak, week table, commitment completion %, plan-vs-done hit rate, flagged patterns. This is item 1 in CLAUDE.md's context loading. The mentor reads this before saying hello.
+
+**`tests/update-tracker.Tests.ps1`** — 21 Pester 5 tests, all passing. TDD throughout. Test coverage for all 8 functions including edge cases (empty sessions, single-element arrays, non-becoming streak resets).
+
+**CLAUDE.md updates** — tracker.md and last session log added as items 1-2 in context loading order. "Session end" workflow section added. File permissions table updated to include session log writes.
+
+### Key decisions and why
+
+**Hook over manual script** — could have required Wayne to run the script manually. Rejected. Manual steps create friction, get skipped when tired, and fail exactly on hard days — which are precisely when the data matters most.
+
+**Script-computed tracker, never manually edited** — tracker.md is fully derived from session logs. There's no way to fudge the scorecard. The session logs are the source of truth. The tracker is the computation. Patterns it flags are only credible if the data is clean.
+
+**YAML frontmatter in session logs** — gives the script machine-readable data while the log body stays human-readable. The mentor writes a log that Wayne can read like a journal entry and that the script can parse like a database. One file, two readers.
+
+**Pester 5 TDD** — found Pester 3.4.0 installed, upgraded to 5.7.1. Wrote failing tests before implementation code. This matters because the script has to be reliable — a bug in streak counting or frontmatter parsing corrupts the only persistent record of Wayne's coaching history.
+
+### Bugs caught
+
+**Critical regex bug in hook path detection** — original plan used `[regex]::Escape("logs") + "[/\\]sessions[/\\]"`. The `Escape()` call broke the character class when concatenated, making the hook silently fire on every Write, not just session logs. Fixed to a literal pattern: `'logs[/\\]sessions[/\\]'`.
+
+**Math error in spec** — spec said hit rate test should expect 67. Actual floor(4/6 × 100) = 66. Implementer caught it.
+
+**Misleading test description** — test named "returns 1 when the most recent evening is becoming" was actually asserting streak = 0. Fixed the description to match the assertion.
+
+### What shipped (by task)
+
+7 tasks: frontmatter parser → session aggregators → streak/plan/patterns → week table → hook wiring + stdin check → Pester test suite → CLAUDE.md wiring. All 21 tests green. Pushed to origin main.
+
+### Content seeds from this session
+
+1. **"Your AI coach has no memory. Here's how I fixed that."** — the core problem stated plainly. Hook for a video about making AI systems persistent.
+2. **"Save a file. Tracker updates. No manual step."** — the automation payoff. Short demo video material.
+3. **"I built a scorecard that can't be fudged. The computation is the integrity."** — script-computed vs. manual. Honesty as architecture.
+4. **"TDD on a PowerShell coaching script. Because the data is someone's actual behavior."** — not "testing is good" — testing is critical when the output affects human accountability.
+5. **"The PostToolUse hook is the thing no one talks about in Claude Code."** — technical deep-dive. How hooks work, why they matter, the stdin JSON pattern.
+6. **"21 tests, 2 bugs caught in review. Those bugs would have corrupted my coaching history."** — the case for review gates in subagent development.
+7. **"The session log is a journal entry. The YAML frontmatter is a database row. Same file, two readers."** — the design insight. Tweet, short, or technical explainer.
+
+### What's next
+
+- Run the first real morning check-in under the new system
+- Fill week 1 session logs so the tracker has real data
+- Sunday: first weekly review generates the first weekly summary
+- Record the build-in-public video series (sessions 01–06 is a complete arc)

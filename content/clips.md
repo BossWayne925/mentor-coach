@@ -90,3 +90,26 @@ Extracted soundbites, frameworks, and one-liners worth a video, post, or hook. P
 
 > **"The system is done. Every blank is filled. Now there are no more excuses to build instead of do."**
 > *Source: session 05 — operational transition. The builder-vs-doer tension.*
+
+## 2026-06-06 (session 06)
+
+> **"Your AI coach has no memory. Every session it meets you like a stranger. Here's how I fixed that."**
+> *Source: session 06 — the core problem that drove the memory layer. Strong hook, clear stakes.*
+
+> **"Save the log. Tracker updates. No manual step. Accountability that doesn't depend on discipline to run it."**
+> *Source: session 06 — PostToolUse hook automation. The payoff of the whole system.*
+
+> **"A scorecard you can fudge isn't a scorecard. I built mine so only the code can write it."**
+> *Source: session 06 — script-computed tracker. Honesty as architecture.*
+
+> **"The session log is a journal entry. The YAML frontmatter is a database row. One file, two readers."**
+> *Source: session 06 — structured session log design. Tweet, short, or technical explainer.*
+
+> **"I wrote 21 tests for a PowerShell coaching script. Because the data it tracks is my actual behavior — I can't afford bugs."**
+> *Source: session 06 — why TDD matters when the output affects human accountability.*
+
+> **"Two bugs caught in review. One would have silently run the tracker on every file write. One would have lied to me about my streak."**
+> *Source: session 06 — the case for review gates in subagent development. Specific, honest, concrete.*
+
+> **"The PostToolUse hook is Claude Code's most underused feature. It turns file writes into automated workflows."**
+> *Source: session 06 — hook wiring. Technical deep-dive seed for the builder audience.*
