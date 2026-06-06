@@ -5,6 +5,9 @@
 CLAUDE.local.md
 .claude/settings.local.json
 
+# Session memory (internal, not for public)
+.remember/
+
 # Python
 __pycache__/
 *.pyc
