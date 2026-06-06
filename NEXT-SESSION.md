@@ -6,7 +6,7 @@
 
 **Project:** Folder-based AI mentor focused on identity transformation. v1 ships a single-arc, single-voice mentor; designed as the first vertical slice of a larger mentor OS (sibling arcs + 7-mode system come in v2).
 
-**Phase:** Brainstorming → Design. Foundation committed. **Sections 1 (architecture), 2 (methodology), and 3 (`me/` layer) are approved.** Sections 4 and 5 still to do.
+**Phase:** Design. Foundation committed. **Sections 1 (architecture), 2 (methodology), 3 (`me/` layer), and 4 (goals+skills+hooks) are approved.** Section 5 (runtime/CLAUDE.md) still to do.
 
 ## Read these four files in order
 
@@ -19,7 +19,7 @@
 
 - ~~**Section 2: Methodology layer**~~ — **Done.** 3 files: `mentor/identity.md`, `mentor/methodology.md`, `mentor/tone.md`. No reference subfolder. Decision #10 locked.
 - **Section 3: `me/` layer** — 6 files capturing what the mentor knows about Wayne (current identity, becoming, values, weaknesses, triggers, history). This requires actual interview answers from Wayne.
-- **Section 4: goals + skills + hooks** — active-arc, the 7 coaching moves, the daily-checkin and weekly-review hooks.
+- ~~**Section 4: goals + skills + hooks**~~ — **Done.** 4 goal files, 7 skill files, 4 hook files. Decision #11 locked. Morning + evening check-in confirmed.
 - **Section 5: `CLAUDE.md` + rules** — runtime entry, plus 3 rule files (coach-not-lecture, pushback-style, markdown-discipline).
 - **Spec doc + writing-plans handoff** — once all sections approved, the design gets written to `docs/superpowers/specs/2026-06-05-mentor-coach-v1-design.md` and we transition to implementation planning.
 
@@ -27,7 +27,7 @@
 
 These three were flagged at the end of session 01 build journal and need answers before Section 2/4 can be fully designed:
 
-1. Daily check-in cadence — morning + evening, or evening only?
+1. ~~Daily check-in cadence~~ — **Resolved in Decision #11:** morning + evening.
 2. ~~`me/values.md` shape~~ — **resolved in Decision #09:** split into `values-stated.md` + `values-lived.md`.
 3. ~~Should the mentor be allowed to refuse to engage if Wayne shows up dishonest?~~ — **Resolved in Decision #10:** Yes. Constitutional right in `mentor/identity.md`.
 
