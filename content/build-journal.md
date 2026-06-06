@@ -113,3 +113,60 @@ This gap table is what the mentor reads before every coaching move. It's the thi
 ### What's next
 
 Section 2 (methodology layer) or Section 4 (goals + skills + hooks) — both are unblocked. Section 3 is done. Two open decisions remain: daily check-in cadence and whether the mentor can refuse dishonest engagement.
+
+---
+
+---
+date: 2026-06-06
+session: 03
+arc: identity
+phase: design
+tags: [methodology, tone, mentor-voice, goals, skills, hooks, coaching-moves, if-then-plans, operating-rhythm]
+content-seeds: 7
+---
+
+## Session 03 — The voice and the rhythm
+
+Built two full sections in one session. Section 2 (methodology layer) gives the mentor its identity, coaching method, and voice. Section 4 (goals + skills + hooks) gives it an operating rhythm. All open decisions are now resolved. Only Section 5 (runtime/CLAUDE.md) remains.
+
+### Decisions made and why
+
+**Decision #10 (locked): Methodology layer is 3 files, no reference subfolder.**
+
+- Killed the `mentor/reference/` folder with 5 framework files. The frameworks (Atomic Habits, Future-Self, CBT, ACT, Implementation Intentions) are invisible inspiration — the mentor uses their moves without ever naming them. Separate framework files would have invited "textbook mode" where the AI switches between schools instead of coaching as one integrated voice. The trigger→move routing table in `methodology.md` maps 13 situations to specific responses. The mentor knows what to *do*, not what school it comes from.
+
+- The mentor's voice is tough older brother with street-smart seasoning, matching Wayne's register. No therapy-speak, no corporate tone. Says "that's bullshit" not "that might be an unproductive framing." Short sentences, questions over statements, silence after hard questions. This voice was designed specifically so AI doesn't default to its usual clinical-helpful mode.
+
+- Mentor has a constitutional right to refuse dishonest engagement. If Wayne shows up performing growth instead of doing the work, the mentor says "we're done for today" and walks away. This is the sharpest line between a mentor and a chatbot. A chatbot always responds. A mentor respects itself enough to disengage.
+
+**Decision #11 (locked): Goals (4 files), Skills (7 moves), Hooks (4 triggers). Morning + evening check-in.**
+
+- The 7 coaching moves weren't forced to match a magic number — they emerged naturally from mapping Wayne's triggers and weaknesses to the methodology's three tools. Each skill file has a trigger condition, the move sequence, and example language in Wayne's register. The skills are: score-the-day, challenge-distortion, slip-recovery, finish-push, study-or-stall, future-self-pull, if-then-deploy.
+
+- If-then plans are the most tactical file in the project. Seven pre-loaded responses for seven known triggers. The idea: decide before the moment hits, so willpower isn't the only line of defense. "IF friends call to go out, THEN I say 'not tonight, I'm locked in' — no explanation, no negotiation."
+
+- Morning + evening check-in creates two daily accountability touches. Morning sets intentions and names the trigger most likely to fire. Evening scores the day as identity votes — "what did your actions vote for today?" The weekly review zooms out, scores commitments pass/fail, and audits the stated vs. lived values gap.
+
+### Tensions I noticed
+
+- **The mentor's voice is a bet.** Getting AI to genuinely match Wayne's register — street-smart, direct, no filler — is hard. The tone.md file is specific about what the mentor says and never says, but the real test is runtime. If the AI keeps slipping into therapy-speak or corporate coaching language, `tone.md` needs to get more aggressive with its guardrails.
+
+- **15 new files in one session is fast.** The risk is that the skills and hooks look good on paper but need iteration once they're actually running. Built for change — every file has YAML frontmatter and a `last-reviewed` date so stale content gets revisited.
+
+- **The if-then plans are Wayne's plans, not the mentor's.** The mentor reads them back, but Wayne wrote them. This matters because if-then plans only work when the person believes in their own plan. These need to be tested against real trigger moments and updated when they fail.
+
+- **Morning check-in could become a guilt machine.** If Wayne misses mornings consistently, the system needs to adapt rather than punish. The 2-week revisit window in the ADR is there for this reason.
+
+### Content seeds from this session
+
+1. **"A chatbot always responds. A mentor respects itself enough to walk away."** — the constitutional refusal explained. Strong hook for a video on what separates real coaching from AI assistants.
+2. **"I gave my AI mentor permission to fire me as a client."** — provocative, click-worthy, true. This is the refusal right framed for YouTube.
+3. **"7 coaching moves for 7 failure modes. Here's the playbook I built for my own worst patterns."** — tactical, specific, build-in-public. Walk through each skill→trigger mapping.
+4. **"Your if-then plan should be written before the moment hits. Here's why willpower isn't enough."** — educational content. Show the actual if-then plans file and how it maps to triggers.
+5. **"What did your actions vote for today? That's the only question that matters."** — daily check-in distilled to one line. YouTube short.
+6. **"I built 15 files in one session for my AI mentor. Here's what each one does."** — pure build-in-public tour. Screen recording, folder walkthrough, explain the system.
+7. **"The hardest part of building an AI coach wasn't the AI. It was being honest enough to fill the me/ folder."** — callback to session 02, but now with the full system visible. Vulnerability + technical build = compelling content.
+
+### What's next
+
+Section 5: runtime/CLAUDE.md — the entry point that wires everything together. Three rule files (coach-not-lecture, pushback-style, markdown-discipline). Prompt assembly logic. Then the design phase is complete and we move to implementation.

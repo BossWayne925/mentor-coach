@@ -48,6 +48,26 @@ Statuses: `idea` → `drafting` → `recorded` → `published` → `archived`
   - Angle: 60-second short. The difference between consuming information and producing output. One makes you feel smart, the other makes you grow.
   - Source: session 02 values-lived gap (learning as comfort zone).
 
+- **"I gave my AI mentor permission to fire me as a client."**
+  - Angle: the constitutional refusal right. Why a real mentor walks away when you're not being honest. Show the actual constitution in mentor/identity.md. Provocative title, genuine substance.
+  - Source: session 03 refusal right decision.
+
+- **"7 coaching moves for 7 failure modes."**
+  - Angle: walk through each skill file and the trigger it maps to. Show the actual trigger→move routing table. Tactical build-in-public.
+  - Source: session 03 skills design.
+
+- **"I wrote if-then plans for my worst habits before they happen."**
+  - Angle: implementation intentions explained through the actual file. Show each trigger and its pre-loaded response. Immediately useful — viewer can do the same exercise.
+  - Source: session 03 if-then-plans.md.
+
+- **"15 files in one session — full tour of my AI mentor system."**
+  - Angle: screen recording, folder walkthrough. Show every file, explain the architecture. Pure build-in-public.
+  - Source: session 03 section 2 + 4 completion.
+
+- **"A chatbot always responds. A mentor walks away."**
+  - Angle: 60-second short. The one-line thesis of what separates coaching AI from assistant AI.
+  - Source: session 03 constitutional refusal.
+
 ## drafting
 
 *(nothing yet)*

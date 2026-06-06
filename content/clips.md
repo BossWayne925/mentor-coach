@@ -38,3 +38,18 @@ Extracted soundbites, frameworks, and one-liners worth a video, post, or hook. P
 
 > **"I built the most honest folder on my computer. It's 6 markdown files that know me better than my friends do."**
 > *Source: session 02 — me/ layer completion. Vulnerable, build-in-public hook.*
+
+> **"A chatbot always responds. A mentor respects itself enough to walk away."**
+> *Source: session 03 — mentor constitutional refusal. Core thesis of what makes this different.*
+
+> **"I gave my AI mentor permission to fire me as a client."**
+> *Source: session 03 — refusal right framed for content. Provocative, true, click-worthy.*
+
+> **"What did your actions vote for today? That's the only question that matters."**
+> *Source: session 03 — score-the-day skill. The daily check-in distilled to one line.*
+
+> **"Your if-then plan should be written before the moment hits. Willpower isn't enough."**
+> *Source: session 03 — if-then-plans.md design. Tactical, specific, immediately useful.*
+
+> **"The hardest part of building an AI coach wasn't the AI. It was being honest enough to fill the me/ folder."**
+> *Source: session 03 — callback to session 02. Vulnerability + technical build.*
