@@ -288,7 +288,7 @@ function Main {
                 $hookData    = $stdinRaw | ConvertFrom-Json
                 $writtenPath = $hookData.tool_input.file_path
                 # Only process if the written file is a session log
-                if ($writtenPath -notmatch [regex]::Escape("logs") + "[/\\]sessions[/\\]") {
+                if ($writtenPath -notmatch 'logs[/\\]sessions[/\\]') {
                     exit 0
                 }
             } catch {
