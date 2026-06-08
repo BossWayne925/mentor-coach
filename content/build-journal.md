@@ -408,3 +408,56 @@ The expansion to 5 session types rounds out the system. There's now a structured
 - First YouTube video (was this week's commitment #1)
 - AWS AI Scholars chapters 9+ (June 21 deadline)
 - Sunday: first real weekly review scores the full first week
+
+---
+
+---
+date: 2026-06-08
+session: 08
+arc: identity
+phase: operational → resilient
+tags: [missed-checkin, avoidance, accountability, triggers, gap-detection, future-self-pull, if-then-plans]
+content-seeds: 4
+---
+
+## Session 08 — The gap that revealed the gap
+
+First real test of the system — and it failed in exactly the way Wayne's own weakness files predicted it would. Sunday morning check-in set 3 tasks (shoot video, edit video, AWS chapter 8). None got done. Instead of doing the evening check-in and owning it, Wayne disappeared. No evening log Sunday. No morning log Monday. The tracker shows two blank rows and a broken streak.
+
+Wayne named the pattern himself: "I didn't do the thing, so I didn't do the check-in. I do it a lot and that's what I'm trying to break." This is trigger #7 (finishing/follow-through) compounding with a new trigger that wasn't in the system yet — avoiding accountability after a miss. The second avoidance is worse than the first because it's self-concealing. The system can't catch what it never sees.
+
+### What was built
+
+**Missed check-in recovery protocol** (added to CLAUDE.md) — a new section that fires before session routing. When the mentor loads `tracker.md` and sees gaps (missing mornings or evenings), it opens with the gap, not with "good morning." Three tiers of escalation:
+- 1 miss: name it, score it, move on
+- 2-3 consecutive: deploy future-self-pull, hold the becoming portrait up
+- 4+: read the values-lived gap table back. "You said you value integrity. Your actions this week voted for comfort."
+
+The recovery sequence: name the gap → score the missed day(s) honestly → deploy future-self-pull → deploy slip-recovery if the user admits avoidance → reconnect to becoming self → then proceed to current session.
+
+**Trigger #8** (added to `me/triggers.md`) — "Avoiding accountability after a miss." Named as the most dangerous trigger because it's self-concealing. One missed task becomes two invisible failures (missed task + missed check-in) that compound silently.
+
+**Two new if-then plans** (added to `goals/if-then-plans.md`):
+- IF I didn't do what I planned and feel the pull to skip the evening check-in → THEN I open the mentor anyway. A bad score is better than no score. The man I'm becoming doesn't hide from a rough day.
+- IF I missed a check-in yesterday → THEN I tell the mentor what happened before planning anything new. A clean start requires a clean account.
+
+**New skill deployment route** (added to CLAUDE.md trigger table) — "User returns after missed check-in(s)" → future-self-pull first, then slip-recovery. The gap gets owned before the new session starts.
+
+### Why this matters
+
+This is the session where the system proved it could learn from its own failure. The architecture was designed for daily check-ins — but it had no plan for what happens when the check-ins don't happen. The most predictable failure mode (avoidance after a miss) wasn't covered. Now it is.
+
+The deeper insight: the mentor can't chase Wayne. It can't send a text at 9pm. But it can make coming back impossible to fake. The gap is visible in the tracker. The recovery protocol makes it the first thing addressed. The if-then plan pre-loads the decision before the avoidance moment hits. Three layers — detection, confrontation, pre-loaded response — for one pattern.
+
+### Tensions I noticed
+
+- **The mentor still can't initiate.** All three layers depend on Wayne opening the conversation. If he disappears for a week, the system waits silently. A push notification or scheduled reminder is the missing piece — the system needs an arm that reaches outside the chat.
+- **The escalation tiers are untested.** The 4+ miss tier reads the values-gap table aloud. That's aggressive. It might be exactly right or it might feel like punishment instead of coaching. Needs runtime testing.
+- **Wayne identified the pattern before the system did.** The system failed to catch a failure mode that Wayne already knew about. The system should be smarter than its user's avoidance — otherwise it's just a journal with extra steps.
+
+### Content seeds from this session
+
+1. **"I built an AI mentor. Then I ghosted it. Here's what happened when I came back."** — the missed check-in as content. Raw, honest, relatable. Everyone who's ever abandoned a habit tracker knows this feeling.
+2. **"The most dangerous habit isn't the slip. It's avoiding the mirror after."** — the compound avoidance insight. One missed task is recoverable. Missing the accountability for missing it is where streaks die.
+3. **"My AI mentor can't chase me. So I built a trap I can't walk past."** — the gap-detection protocol as design. How to make accountability systems that catch the specific way YOU avoid them.
+4. **"I found the one trigger my self-improvement system didn't cover — the trigger that hides itself."** — trigger #8 framed for content. The meta-pattern of avoidance-of-accountability.

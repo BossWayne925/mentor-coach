@@ -113,3 +113,17 @@ Extracted soundbites, frameworks, and one-liners worth a video, post, or hook. P
 
 > **"The PostToolUse hook is Claude Code's most underused feature. It turns file writes into automated workflows."**
 > *Source: session 06 — hook wiring. Technical deep-dive seed for the builder audience.*
+
+## 2026-06-08 (session 08)
+
+> **"I didn't do the thing, so I didn't do the check-in. That's two failures for the price of one."**
+> *Source: session 08 — Wayne naming the compound avoidance pattern. Raw, universal.*
+
+> **"The most dangerous trigger is the one that hides itself. You miss the task, then you miss the mirror."**
+> *Source: session 08 — trigger #8 discovery. The self-concealing pattern.*
+
+> **"A bad score is better than no score. The man I'm becoming doesn't hide from a rough day."**
+> *Source: session 08 — if-then plan for missed check-in avoidance. The pre-loaded response.*
+
+> **"My AI mentor can't chase me. But now it won't let me pretend I was never gone."**
+> *Source: session 08 — gap-detection protocol. The design insight that closes the avoidance loop.*

@@ -140,6 +140,18 @@ Statuses: `idea` → `drafting` → `recorded` → `published` → `archived`
   - Angle: the honest fork guide. Start with what the README said (swap the me/ folder), then show what was actually hardcoded (12+ name references in CLAUDE.md, goals/ full of specific commitments, logs/ full of personal data). Walk through the real steps. Be direct: this takes an afternoon, mostly because filling me/ requires genuine self-knowledge, not just copy-paste. Useful for anyone who wants to build a personal AI system and doesn't want to start from scratch.
   - Source: session 07 forkability work.
 
+- **"I built an AI mentor. Then I ghosted it."**
+  - Angle: the missed check-in story told honestly. Set 3 tasks, did none, disappeared for a day. What the tracker looked like when he came back. What he built to make sure the system catches this next time. The most relatable content in the series — everyone has ghosted a habit tracker.
+  - Source: session 08. Could be the best early video because it's failure, not polish.
+
+- **"The most dangerous habit isn't the slip. It's avoiding the mirror after."**
+  - Angle: compound avoidance explained. Miss the task → miss the check-in → lose the streak silently → start over pretending it didn't happen. Show trigger #8, show the if-then plan, show the gap-detection protocol. 60-second short or 3-minute explainer.
+  - Source: session 08 compound avoidance insight.
+
+- **"My AI mentor can't chase me. So I built a trap I can't walk past."**
+  - Angle: the design challenge of accountability systems that depend on the user showing up. How gap-detection, escalation tiers, and pre-loaded if-then plans create three layers of defense against the specific way you avoid accountability. Technical + personal.
+  - Source: session 08 missed-checkin recovery protocol.
+
 ## drafting
 
 *(nothing yet)*

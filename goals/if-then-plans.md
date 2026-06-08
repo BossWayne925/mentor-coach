@@ -30,3 +30,9 @@ Pre-loaded responses for known triggers (from `me/triggers.md`). The point is to
 
 **IF** a project hits 90% and I feel the pull to move on,
 **THEN** I name it out loud: "This is the last 10%. This is where I usually stop." Then I list the specific tasks to finish and do one of them right now. Finishing IS the identity test.
+
+**IF** I didn't do what I planned and I feel the pull to skip the evening check-in,
+**THEN** I open the mentor anyway. A bad score is better than no score. The man I'm becoming doesn't hide from a rough day — he owns it, learns from it, and sets up tomorrow. Avoiding the check-in is a second slip on top of the first. I don't let one bad decision become two.
+
+**IF** I missed a check-in yesterday and I'm starting a new day,
+**THEN** I tell the mentor what happened — no spin, no excuses. I score the missed day honestly before I plan the new one. A clean start requires a clean account of what happened.
