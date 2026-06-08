@@ -76,13 +76,17 @@ Write session log → PostToolUse hook fires → scripts/update-tracker.ps1 runs
 
 ## The session loop
 
-Three session types, each with its own hook:
+Five session types, each with its own hook:
 
 **Morning check-in** (5-10 min) — Identity anchor, top 3 tasks, pre-loaded if-then plans, hard commit.
 
 **Evening check-in** (10-15 min) — Score the day (becoming / mixed / comfort zone won), hard question, values check, set tomorrow.
 
 **Weekly review** (20-30 min) — Score each commitment pass/fail, pattern check against known failure modes, values audit with `me/` file update, 90-day progress check, set next week's 5 commitments.
+
+**Goal-setting** (15-20 min) — Set a new goal, revise an existing one, or officially kill something that isn't working. Enforces a definition of done, loads an obstacle if-then, and wires the goal into `goals/90-day-picture.md` and `goals/if-then-plans.md`.
+
+**Deep work planning** (10-20 min) — Two sub-modes: project breakdown (map a project into phases, drop phase 1 tasks into `TASKS.md`, write a standalone project file to `projects/`) or day block planning (anchor to commitments, block focused time, pre-load resistance response).
 
 ## Fork it
 

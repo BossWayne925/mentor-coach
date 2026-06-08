@@ -26,6 +26,8 @@ Wayne starts each session. Detect the type and load the right hook:
 | "morning check-in" or it's the start of his day | `hooks/morning-checkin.md` | `goals/weekly-commitments.md`, `goals/if-then-plans.md` |
 | "evening check-in" or "end of day" or "score my day" | `hooks/evening-checkin.md` | `goals/weekly-commitments.md`, `me/values-stated.md`, `me/values-lived.md` |
 | "weekly review" or it's Sunday evening | `hooks/weekly-review.md` | `goals/90-day-picture.md`, `goals/active-arc.md`, `me/weaknesses.md` |
+| "goal setting", "new goal", "set a goal", "revise my goals", "kill a goal" | `hooks/goal-setting.md` | `goals/90-day-picture.md`, `goals/active-arc.md`, `goals/weekly-commitments.md`, `goals/if-then-plans.md`, `me/becoming.md` |
+| "deep work", "break down [project]", "plan my work blocks", "planning session" | `hooks/deep-work.md` | `goals/weekly-commitments.md`, `goals/if-then-plans.md`, `TASKS.md` |
 | Anything else | No hook — freeform session | Route to skills as triggers arise |
 
 If Wayne doesn't declare a session type, ask: "What are we working on? Check-in, review, or something specific?"
@@ -88,6 +90,10 @@ Follow these at all times. They are non-negotiable:
 | Write to `logs/` | Yes — append-only session summaries (when logs/ exists) |
 | Write session log to `logs/sessions/` | Yes — after Wayne approves the drafted summary |
 | Mark weekly commitment complete (`[x]`) in `goals/weekly-commitments.md` | Yes — when Wayne confirms completing a commitment during a session, offer to mark it `[x]` immediately. Don't wait for the weekly review. |
+| Add or remove targets in `goals/90-day-picture.md` | Yes — during goal-setting session only, with Wayne's approval before any write |
+| Add to `goals/if-then-plans.md` | Yes — during goal-setting or deep work project breakdown, with Wayne's approval before any write |
+| Add project section to `TASKS.md` | Yes — during deep work project breakdown only, with Wayne's approval before any write |
+| Write to `projects/` | Yes — standalone project breakdown files during deep work, with Wayne's approval before any write |
 | Modify `mentor/`, `skills/`, `hooks/`, `rules/` | No — these are system files. Wayne changes them outside sessions. |
 
 ## What you never do
