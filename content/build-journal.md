@@ -350,3 +350,61 @@ The mentor drafts the log at session end. Wayne reads it, approves or edits, the
 - Fill week 1 session logs so the tracker has real data
 - Sunday: first weekly review generates the first weekly summary
 - Record the build-in-public video series (sessions 01–06 is a complete arc)
+
+---
+
+---
+date: 2026-06-07
+session: 07
+arc: identity
+phase: operational → expanded
+tags: [assessment, gaps, goal-setting, deep-work, forkability, architecture, content-strategy]
+content-seeds: 3
+---
+
+## Session 07 — The audit and the expansion
+
+Took a full step back and assessed the system as it stood. Not building anything new — reading everything that existed, stress-testing the logic, and naming the gaps honestly. Found 3 structural gaps, fixed all 3, then expanded the session types from 3 to 5.
+
+### Gaps found and fixed
+
+**Gap 1: Commitment tracking was one-way.** The tracker read `[x]` checkboxes from `goals/weekly-commitments.md` to compute completion %. But there was no write path — the mentor had read permission, not write permission for those checkboxes. So completion % was always 0% until the weekly review. Fixed by adding an explicit file permission to CLAUDE.md: the mentor can mark `[x]` immediately when Wayne confirms completing a commitment during any session. Don't wait for Sunday.
+
+**Gap 2: The me/ files could rot.** Nothing in the session flows forced a revisit of `me/identity-now.md`, `me/becoming.md`, or `me/values-lived.md`. These files could go months out of date and the mentor would keep coaching from stale self-knowledge. Fixed by strengthening the weekly-review hook step 3 — now explicitly requires checking and updating all three files with a `last-reviewed` date every single weekly review, not just when something feels stale.
+
+**Gap 3: The content layer existed but sessions never prompted capturing ideas.** The `content/` folder was built in session 01 but the morning and evening hooks had no moment to feed it. Wayne could have a breakthrough or build something worth filming and it just wouldn't get logged. Fixed by adding a Content check step to morning check-in (30 sec before commit: "Is there anything from today's plan that would make a good video or clip?") and a Content capture step to evening check-in ("Did today surface anything worth logging — a lesson, a clip idea, a build moment?").
+
+**Bonus fix: coach.html was showing session stats and nothing else.** Rewrote it to surface the four things that actually matter in a coaching system: identity snapshot (sessions, streak, hit rate, 90-day progress), the becoming portrait, the stated vs. lived values gap table, and 90-day picture progress by category. Also added IndexedDB persistence so the workspace folder remembers between browser sessions.
+
+### What was added
+
+**Goal-setting session** (`hooks/goal-setting.md`) — 6 steps: orient (new/revision/kill), reality check against 90-day picture, define done (forces specific + dated output), obstacle pre-load (builds if-then in conversation before writing), wire it in (writes to 90-day-picture.md and if-then-plans.md with approval), close with first action. The kill-a-goal path distinguishes wrong direction/timing from avoidance — avoidance gets challenge-distortion deployed before the kill is accepted.
+
+**Deep work planning session** (`hooks/deep-work.md`) — two sub-modes detected at session start. Sub-mode A (project breakdown) maps a project into 3-5 phases, breaks phase 1 into 90-min tasks, writes them to TASKS.md, and creates a full breakdown in `projects/[name].md`. Sub-mode B (day block planning) structures a focused day: anchor to commitments, inventory real focused hours, block three time slots (deep work, shallow work, protected stop time), pre-load the resistance if-then. Day-block if-thens stay in conversation — they're one-day plans, not standing rules.
+
+System now has 5 session types: morning, evening, weekly review, goal-setting, deep work.
+
+### Making it forkable
+
+The README said "swap out the me/ folder" as if that was it. It wasn't. CLAUDE.md had "Wayne" hardcoded in 12+ places — permissions, routing instructions, behavioral constraints, the refusal protocol. A fork would route a different person through a system that still addresses them as Wayne.
+
+Fixed cleanly: added `name:` field to `me/identity-now.md` frontmatter (single source of truth), replaced every "Wayne" reference in CLAUDE.md with "the user" + a one-line instruction at the top to read the name from that field. Then rewrote the README fork section with actual numbered steps: set your name, replace all 6 me/ files (with a table explaining what each one needs), replace goals/ files, clear the logs, optionally adjust mentor persona, start a session. Honest time estimate included: 2-4 hours, mostly the self-knowledge work.
+
+### What this session revealed
+
+The build was sound. The gaps weren't architectural — they were operational. Write permissions missing, files without revisit pressure, content layer disconnected from session flows. Three precise fixes, no rearchitecting. That's what a good audit looks like.
+
+The expansion to 5 session types rounds out the system. There's now a structured path for every type of coaching work: daily accountability (morning/evening), weekly recalibration (weekly review), goal definition (goal-setting), and tactical planning (deep work). The freeform path still exists for everything else.
+
+### Content seeds from this session
+
+1. **"I audited my AI mentor 2 weeks in and found 3 things broken."** — the gap audit framed honestly. Not "I found bugs," but structural gaps that would have corrupted the system over time. Walk through each one, show the fix, explain why it matters. Build-in-public honesty at its best.
+2. **"My AI mentor now has a goal-setting mode — and it won't accept vague goals."** — walk through the define-done step, the kill-a-goal distinction, the obstacle pre-load. Tactical, specific, immediately replicable for anyone who journals goals.
+3. **"You can fork my AI mentor. Here's what it actually takes."** — the honest guide. What the README said, what was actually required, the specific steps, why 'swap the me/ folder' undersells the self-knowledge work. Vulnerable and useful.
+
+### What's next
+
+- Run the system: morning and evening check-ins, goal-setting when a goal needs defining, deep work planning before big build days
+- First YouTube video (was this week's commitment #1)
+- AWS AI Scholars chapters 9+ (June 21 deadline)
+- Sunday: first real weekly review scores the full first week

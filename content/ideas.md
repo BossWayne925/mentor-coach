@@ -132,6 +132,14 @@ Statuses: `idea` → `drafting` → `recorded` → `published` → `archived`
   - Angle: compilation / retrospective. 6 sessions, 6 journal entries, 37+ files, one operational AI mentor with persistent memory. Walk the arc: problem → me-layer → methodology → runtime → commitments → memory. This is the video that makes someone binge the series.
   - Source: sessions 01–06. This is the cornerstone content.
 
+- **"I audited my AI mentor 2 weeks in and found 3 things broken."**
+  - Angle: build-in-public honesty. Not bugs — structural gaps that looked fine on paper but would have corrupted the system over time. Commitment tracking with no write path. Me/ files with no revisit pressure. Content layer completely disconnected from sessions. Walk through each gap, show the fix. This is the video that builds trust: real builders catch their own mistakes and fix them publicly.
+  - Source: session 07 architecture audit.
+
+- **"You can fork my AI mentor. Here's what it actually takes."**
+  - Angle: the honest fork guide. Start with what the README said (swap the me/ folder), then show what was actually hardcoded (12+ name references in CLAUDE.md, goals/ full of specific commitments, logs/ full of personal data). Walk through the real steps. Be direct: this takes an afternoon, mostly because filling me/ requires genuine self-knowledge, not just copy-paste. Useful for anyone who wants to build a personal AI system and doesn't want to start from scratch.
+  - Source: session 07 forkability work.
+
 ## drafting
 
 *(nothing yet)*
