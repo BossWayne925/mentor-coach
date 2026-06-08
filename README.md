@@ -90,7 +90,55 @@ Five session types, each with its own hook:
 
 ## Fork it
 
-This is licensed CC BY 4.0. Fork it, swap out the `me/` folder with your own answers, adjust the methodology, and build your own mentor. The architecture is the value — the personal content is just mine.
+This is licensed CC BY 4.0. The architecture is the value — the personal content is mine. Here's what it actually takes to make it yours.
+
+**Estimated time: 2-4 hours.** Most of that is the self-knowledge work, not the setup.
+
+### Setup steps
+
+**1. Fork and clone the repo**
+
+**2. Set your name**
+
+Open `me/identity-now.md` and update the `name:` field in the frontmatter:
+```yaml
+name: Your Name
+```
+The mentor reads this at session start and uses it throughout. That's the only place your name needs to live.
+
+**3. Replace the `me/` folder — all 6 files**
+
+This is the real work. Don't rush it. Shallow answers produce shallow coaching.
+
+| File | What goes in it |
+|------|-----------------|
+| `me/identity-now.md` | Where you are today — background, current defaults, how you see yourself honestly |
+| `me/becoming.md` | Who you're becoming — the portrait of the person you're building toward |
+| `me/values-stated.md` | What you say you value — list them |
+| `me/values-lived.md` | What your actions reveal you actually value — the gap between this and stated is the primary coaching lever |
+| `me/weaknesses.md` | Your specific failure modes — the 3-5 patterns that consistently take you off course |
+| `me/triggers.md` | Known situations that activate your worst defaults — with pre-built if-then responses |
+
+**4. Replace the `goals/` folder**
+
+| File | What goes in it |
+|------|-----------------|
+| `goals/active-arc.md` | The current chapter — what you're building, what this season is about |
+| `goals/90-day-picture.md` | Specific targets 90 days out, by category, with checkboxes |
+| `goals/weekly-commitments.md` | This week's 5 commitments — concrete, completable, deadline attached |
+| `goals/if-then-plans.md` | Pre-built responses to your known failure triggers (built from `me/triggers.md`) |
+
+**5. Clear the logs**
+
+Delete everything in `logs/sessions/` and reset `logs/tracker.md` to a blank state. Those are mine.
+
+**6. Optionally adjust the mentor's voice**
+
+The default persona in `mentor/identity.md` and `mentor/tone.md` is the tough older brother — direct, no performance tolerated, short sentences. If that doesn't fit you, change it. The architecture doesn't depend on the persona.
+
+**7. Start a morning check-in**
+
+That's it. The system is live. The mentor reads your `me/` files at session start.
 
 ---
 

@@ -1,6 +1,7 @@
 ---
 type: self-knowledge
 domain: identity
+name: Wayne
 last-reviewed: 2026-06-05
 confidence: medium
 ---
