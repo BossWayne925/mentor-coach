@@ -36,6 +36,20 @@ Describe "Get-SessionFrontmatter" {
         $result.'top-3-tasks' | Should -Be @("Cold outreach", "Content strategy", "Record video 2")
     }
 
+    It "parses quoted string arrays with commas" {
+        $tempFile = New-TemporaryFile
+        Set-Content $tempFile.FullName @"
+---
+date: 2026-06-07
+type: morning
+top-3-tasks: ["Task one, first", "Task two"]
+---
+"@
+        $result = Get-SessionFrontmatter $tempFile.FullName
+        $result.'top-3-tasks' | Should -Be @("Task one, first", "Task two")
+        Remove-Item $tempFile.FullName
+    }
+
     It "returns empty hashtable for file with no frontmatter" {
         $tempFile = New-TemporaryFile
         Set-Content $tempFile.FullName "No frontmatter here"
@@ -163,5 +177,83 @@ Describe "New-TrackerContent" {
         $result | Should -Match '## This week'
         $result | Should -Match '## Weekly commitments'
         $result | Should -Match '## Plan vs. done'
+    }
+}
+
+Describe "Get-LowestScoringDayPattern" {
+    It "returns null with fewer than three evening sessions" {
+        $result = Get-LowestScoringDayPattern @(
+            @{ date = "2026-06-06"; type = "evening"; score = "becoming" },
+            @{ date = "2026-06-07"; type = "evening"; score = "mixed" }
+        )
+        $result | Should -BeNullOrEmpty
+    }
+
+    It "flags the lowest scoring weekday when there is a clear pattern" {
+        $fakeSessions = @(
+            @{ date = "2026-06-02"; type = "evening"; score = "mixed" },
+            @{ date = "2026-06-09"; type = "evening"; score = "mixed" },
+            @{ date = "2026-06-03"; type = "evening"; score = "becoming" },
+            @{ date = "2026-06-10"; type = "evening"; score = "becoming" }
+        )
+        $result = Get-LowestScoringDayPattern $fakeSessions
+        $result | Should -Match 'Lowest average evening score'
+    }
+}
+
+Describe "Main" {
+    It "generates tracker.md from session logs" {
+        $root = Join-Path $env:TEMP ("tracker-test-" + [guid]::NewGuid())
+        New-Item -ItemType Directory -Force -Path (Join-Path $root "logs/sessions") | Out-Null
+        New-Item -ItemType Directory -Force -Path (Join-Path $root "logs/weeks") | Out-Null
+        New-Item -ItemType Directory -Force -Path (Join-Path $root "goals") | Out-Null
+        Set-Content (Join-Path $root "goals/weekly-commitments.md") "1. [ ] Test commitment"
+        Set-Content (Join-Path $root "logs/sessions/2026-06-06-evening.md") @"
+---
+date: 2026-06-06
+type: evening
+score: becoming
+top-3-planned: ["A","B","C"]
+top-3-done: ["A","B","C"]
+commitments-touched: [1]
+slip: false
+skills-deployed: [score-the-day]
+---
+"@
+        Main $root
+        (Test-Path (Join-Path $root "logs/tracker.md")) | Should -BeTrue
+        $trackerText = Get-Content (Join-Path $root "logs/tracker.md") -Raw
+        $trackerText | Should -Match 'sessions-logged: 1'
+    }
+
+    It "creates a weekly summary when the latest session is weekly-review" {
+        $root = Join-Path $env:TEMP ("tracker-test-" + [guid]::NewGuid())
+        New-Item -ItemType Directory -Force -Path (Join-Path $root "logs/sessions") | Out-Null
+        New-Item -ItemType Directory -Force -Path (Join-Path $root "logs/weeks") | Out-Null
+        New-Item -ItemType Directory -Force -Path (Join-Path $root "goals") | Out-Null
+        Set-Content (Join-Path $root "goals/weekly-commitments.md") "1. [ ] Test commitment"
+        Set-Content (Join-Path $root "logs/sessions/2026-06-05-evening.md") @"
+---
+date: 2026-06-05
+type: evening
+score: mixed
+top-3-planned: ["A"]
+top-3-done: ["A"]
+commitments-touched: [1]
+slip: false
+skills-deployed: [score-the-day]
+---
+"@
+        Set-Content (Join-Path $root "logs/sessions/2026-06-06-weekly-review.md") @"
+---
+date: 2026-06-06
+type: weekly-review
+---
+"@
+        Main $root
+        $weekPath = Join-Path $root "logs/weeks/2026-W23.md"
+        (Test-Path $weekPath) | Should -BeTrue
+        $summaryText = Get-Content $weekPath -Raw
+        $summaryText | Should -Match 'Week W23 Summary'
     }
 }

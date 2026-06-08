@@ -106,6 +106,30 @@ skills-deployed: [score-the-day]
 [Anything that needs to show up in tomorrow's morning check-in.]
 ```
 
+### Freeform log
+
+```markdown
+---
+date: YYYY-MM-DD
+type: freeform
+topic: "one-line description of what was worked on"
+skills-deployed: []
+carry-forward: []
+---
+
+## What we worked on
+
+[Topic, context, what was explored or decided.]
+
+## Key moments
+
+[Anything the mentor would want to remember — a realization, a commitment made, a pattern named.]
+
+## Carry-forward
+
+[Anything that needs to show up at the next check-in or weekly review.]
+```
+
 ---
 
 ## Tracker Schema (`logs/tracker.md`)

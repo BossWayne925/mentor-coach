@@ -30,12 +30,18 @@ Deploy `skills/score-the-day.md`:
 ### 3. Values check (2 min)
 - "Were you true to yourself today?" (Reference `me/values-stated.md`)
 - If actions contradicted stated values, name it. Update `me/values-lived.md` if a pattern is emerging.
+- If today's actions add to or contradict a pattern in `me/values-lived.md`, propose the update in conversation. Wayne approves before any write.
 
 ### 4. Tomorrow (2 min)
 - "What are your top 3 tasks tomorrow?"
 - "Is there anything from today that carries forward?"
 - Set the task list so the morning check-in has something to work with.
 
-### 5. Close
+### 5. Content capture (1 min)
+- "Did today surface anything worth logging — a lesson, a clip idea, a build moment?"
+- If yes: add it to `content/ideas.md` or `content/clips.md` before closing. One line is enough.
+- This is the build-as-content system working. Don't skip it.
+
+### 6. Close
 - "Good day" or "rough day" — but either way: "What's tomorrow look like?"
 - The day ends clean. No guilt spiraling. Acknowledge, learn, move.

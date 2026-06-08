@@ -9,16 +9,25 @@ function Get-SessionFrontmatter {
     $yaml = $Matches[1]
     $result = @{}
 
+    if (Get-Command ConvertFrom-Yaml -ErrorAction SilentlyContinue) {
+        $yamlBlock = "---`n$yaml`n---"
+        $parsed    = $yamlBlock | ConvertFrom-Yaml
+        foreach ($prop in $parsed.PSObject.Properties) {
+            $result[$prop.Name] = $prop.Value
+        }
+        return $result
+    }
+
     foreach ($line in ($yaml -split '\r?\n')) {
         if ($line -notmatch '^([^:]+):\s*(.*)$') { continue }
         $key   = $Matches[1].Trim()
         $value = $Matches[2].Trim()
 
         if ($value -match '^\[(.+)\]$') {
-            # Array: [1, 3] or ["a", "b"] or [a, b]
-            $items = $Matches[1] -split '\s*,\s*'
+            $items = Split-FrontmatterArray $Matches[1]
             $value = @($items | ForEach-Object {
-                $item = $_.Trim().Trim('"')
+                $item = $_.Trim()
+                if ($item -match '^"(.+)"$') { $item = $Matches[1] }
                 if ($item -match '^\d+$') { [int]$item } else { $item }
             })
         } elseif ($value -eq 'true')  { $value = $true  }
@@ -28,6 +37,39 @@ function Get-SessionFrontmatter {
     }
 
     return $result
+}
+
+function Split-FrontmatterArray {
+    param([string]$ArrayText)
+
+    $items   = @()
+    $current = ''
+    $inQuote = $false
+
+    for ($i = 0; $i -lt $ArrayText.Length; $i++) {
+        $char = $ArrayText[$i]
+        if ($char -eq '"') {
+            $inQuote = -not $inQuote
+            $current += $char
+            continue
+        }
+
+        if (-not $inQuote -and $char -eq ',') {
+            $items += $current.Trim()
+            $current = ''
+            continue
+        }
+
+        $current += $char
+    }
+
+    if ($current -ne '') { $items += $current.Trim() }
+
+    return $items | ForEach-Object {
+        $item = $_.Trim()
+        if ($item -match '^"(.+)"$') { $item = $Matches[1] }
+        $item
+    }
 }
 
 # Reads all session log files from a directory, returns array of frontmatter hashtables sorted by date.
@@ -101,7 +143,57 @@ function Get-Patterns {
         $patterns += "Plan-vs-done hit rate below 50% ($($pvd.HitRate)%)"
     }
 
+    $dayPattern = Get-LowestScoringDayPattern $Sessions
+    if ($dayPattern) {
+        $patterns += $dayPattern
+    }
+
     return $patterns
+}
+
+function Get-ScoreValue {
+    param([string]$Score)
+    switch ($Score) {
+        'becoming'         { 3 }
+        'mixed'            { 2 }
+        'comfort-zone-won' { 1 }
+        default            { 0 }
+    }
+}
+
+function Get-LowestScoringDayPattern {
+    param([array]$Sessions)
+
+    $evenings = @($Sessions | Where-Object { $_.type -eq 'evening' })
+    if ($evenings.Count -lt 3) { return $null }
+
+    $scoresByDay = @{}
+    foreach ($s in $evenings) {
+        try {
+            $day = ([datetime]$s.date).DayOfWeek.ToString().Substring(0,3)
+        } catch {
+            continue
+        }
+        if (-not $scoresByDay.ContainsKey($day)) { $scoresByDay[$day] = @() }
+        $scoresByDay[$day] += Get-ScoreValue $s.score
+    }
+
+    $dayAverages = $scoresByDay.GetEnumerator() | ForEach-Object {
+        [PSCustomObject]@{
+            Day   = $_.Key
+            Avg   = ($_.Value | Measure-Object -Average).Average
+            Count = $_.Value.Count
+        }
+    } | Sort-Object Avg, Day
+
+    if ($dayAverages.Count -lt 2) { return $null }
+
+    $best   = $dayAverages[0]
+    $second = $dayAverages[1]
+
+    if (($second.Avg - $best.Avg) -lt 0.25) { return $null }
+
+    return "Lowest average evening score: $($best.Day) ($([math]::Round($best.Avg,2))) over $($best.Count) sessions"
 }
 
 # Builds the week table rows for a given ISO week number and year.
@@ -146,7 +238,17 @@ function Get-CommitmentLines {
 
     if (-not (Test-Path $CommitmentsFile)) { return @() }
     $content = Get-Content $CommitmentsFile
-    return @($content | Where-Object { $_ -match '^\d+\. \[[ x]\]' })
+    return @($content | Where-Object { $_ -match '^\d+\. \[[ xX]\]' })
+}
+
+function Get-CommitmentBlock {
+    param([string]$CommitmentsFile)
+
+    $commitLines = Get-CommitmentLines $CommitmentsFile
+    if ($commitLines.Count -gt 0) {
+        return $commitLines -join "`n"
+    }
+    return "(no commitments loaded)"
 }
 
 # Builds the full tracker.md content string from sessions and commitment state.
@@ -173,11 +275,11 @@ function New-TrackerContent {
     $lastCZW     = if ($lastCZWObj) { $lastCZWObj.date } else { 'none' }
 
     # Commitments
+    $commitBlock = Get-CommitmentBlock $CommitmentsFile
     $commitLines = Get-CommitmentLines $CommitmentsFile
     $doneCount   = ($commitLines | Where-Object { $_ -match '\[x\]' }).Count
     $totalCount  = $commitLines.Count
     $pct         = if ($totalCount -gt 0) { [math]::Floor($doneCount / $totalCount * 100) } else { 0 }
-    $commitBlock = if ($commitLines.Count -gt 0) { $commitLines -join "`n" } else { "(no commitments loaded)" }
 
     # Patterns
     $patternBlock = if ($patterns.Count -gt 0) {
@@ -224,10 +326,10 @@ function New-WeeklySummary {
     $patterns    = Get-Patterns $Sessions
     $commitLines = Get-CommitmentLines $CommitmentsFile
 
-    $doneCount  = ($commitLines | Where-Object { $_ -match '\[x\]' }).Count
-    $totalCount = $commitLines.Count
-    $pct        = if ($totalCount -gt 0) { [math]::Floor($doneCount / $totalCount * 100) } else { 0 }
-    $commitBlock = if ($commitLines.Count -gt 0) { $commitLines -join "`n" } else { "(none)" }
+    $doneCount    = ($commitLines | Where-Object { $_ -match '\[x\]' }).Count
+    $totalCount   = $commitLines.Count
+    $pct          = if ($totalCount -gt 0) { [math]::Floor($doneCount / $totalCount * 100) } else { 0 }
+    $commitBlock  = Get-CommitmentBlock $CommitmentsFile
 
     $patternBlock = if ($patterns.Count -gt 0) {
         ($patterns | ForEach-Object { "- $_" }) -join "`n"
@@ -313,6 +415,7 @@ function Main {
         $year    = $d.Year
         $weekTag = "W$($isoWeek.ToString('D2'))"
 
+        if (-not (Test-Path $weeksDir)) { New-Item -ItemType Directory -Force $weeksDir | Out-Null }
         $summaryContent = New-WeeklySummary $sessions $commitmentsFile $isoWeek $year
         $summaryFile    = Join-Path $weeksDir "$year-$weekTag.md"
         Set-Content $summaryFile $summaryContent -Encoding UTF8

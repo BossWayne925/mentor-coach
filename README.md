@@ -2,9 +2,7 @@
 
 A local-first, folder-based AI mentor focused on **identity transformation** — clarifying who I'm becoming and closing the gap by acting like him today.
 
-> **Building in public.** Every commit is a timestamped journal entry. The build journal, content seeds, and decision log are all in this repo. Follow along or fork it and build your own.
-
-> Status: **v1 design complete** (started 2026-06-05). All 5 sections built. Ready for first use.
+> Status: **Active** (started 2026-06-05). Built in Claude Code. Morning/evening check-ins running live. Tracker auto-updating via hook.
 
 ## Why this exists
 
@@ -42,41 +40,49 @@ Built on principles from identity-based habits, future-self psychology, and cogn
 | `skills/` | Coaching moves — score-the-day, challenge-distortion, slip-recovery, finish-push, study-or-stall, future-self-pull, if-then-deploy | 7 |
 | `hooks/` | Triggered routines — morning check-in, evening check-in, weekly review, slip detected | 4 |
 | `rules/` | Non-negotiable behavioral constraints — coach-not-lecture, pushback-style, markdown-discipline | 3 |
-| `content/` | Build journal, clips, video ideas, lessons — the build IS the content | 4 |
+| `logs/` | Append-only session records + auto-generated tracker + weekly summaries | live |
+| `scripts/` | PowerShell tracker generator, Pester tests | live |
 | `docs/` | Architecture decisions (ADRs) and locked decisions register | 4 |
-| `logs/` | Append-only session records *(coming in v1.5)* | — |
-| `scripts/` | Prompt assembly and hook runners *(coming in v1.5)* | — |
 
 **Architecture principles:** Markdown is source truth. YAML frontmatter on every file. Each folder has one job. Each file has one job. Append-only logs separate from editable source.
 
-## The build-in-public layer
+## The automation layer
 
-This project doubles as content fuel. Every working session produces:
-
-- **Build journal entries** (`content/build-journal.md`) — raw notes on decisions, tensions, and reasoning
-- **Clips** (`content/clips.md`) — extracted one-liners worth a video or post
-- **Video ideas** (`content/ideas.md`) — backlog of content seeded from the build
-- **Commit messages** — each one has a `Seed:` line for searchable content seeds (`git log --grep=Seed`)
-
-## Follow the build
-
-- **Build journal:** [`content/build-journal.md`](content/build-journal.md) — 3 sessions documented so far
-- **Decision log:** [`docs/decisions/DECISIONS.md`](docs/decisions/DECISIONS.md) — 11 locked architectural decisions
-- **Content seeds:** [`content/clips.md`](content/clips.md) — 18 clips extracted
-- **Video ideas:** [`content/ideas.md`](content/ideas.md) — 11 ideas in backlog
-
-## Commit discipline
-
-Every commit doubles as a timestamped journal entry:
+Sessions don't just get written — they drive the tracker automatically.
 
 ```
-<scope>: <what changed>
-
-Why: <one line>
-Seed: <optional content seed worth a video/post>
+Write session log → PostToolUse hook fires → scripts/update-tracker.ps1 runs → logs/tracker.md regenerates
 ```
 
-Scopes: `arch:` `mentor:` `me:` `goals:` `skills:` `hooks:` `journal:` `clip:` `docs:`
+`logs/tracker.md` always shows:
+- Current becoming streak (consecutive evening scores of "becoming")
+- This week's session grid (morning / evening / score per day)
+- Weekly commitment progress (reads checkboxes from `goals/weekly-commitments.md`)
+- Plan vs. done hit rate across all sessions
+- Patterns flagged (comfort zone streak, low hit rate, worst day-of-week)
+
+## Tools
+
+**`coach.html`** — Zen Coach dashboard. Open the workspace folder to surface:
+- Identity snapshot (sessions, streak, plan hit rate, 90-day progress)
+- Who you're becoming (portrait from `me/becoming.md`)
+- Identity gap table (stated vs. lived values)
+- Weekly commitments with pass/fail status
+- 90-day picture with per-target progress
+- Recent sessions + voice reflection
+- Remembers your last workspace folder via IndexedDB
+
+**`dashboard.html`** — Kanban/list task board. Reads and writes `TASKS.md`. Drag-and-drop columns, subtasks, inline editing, auto-save.
+
+## The session loop
+
+Three session types, each with its own hook:
+
+**Morning check-in** (5-10 min) — Identity anchor, top 3 tasks, pre-loaded if-then plans, hard commit.
+
+**Evening check-in** (10-15 min) — Score the day (becoming / mixed / comfort zone won), hard question, values check, set tomorrow.
+
+**Weekly review** (20-30 min) — Score each commitment pass/fail, pattern check against known failure modes, values audit with `me/` file update, 90-day progress check, set next week's 5 commitments.
 
 ## Fork it
 

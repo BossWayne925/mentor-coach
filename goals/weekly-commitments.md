@@ -14,7 +14,7 @@ Updated every Sunday during weekly review. The mentor holds Wayne to these — n
 
 1. [ ] Shoot first YouTube videos (committed this weekend)
 2. [ ] Complete mentor coach build (Section 5 done — get it running in a live session)
-3. [ ] Define the 1 offer: what exactly EBC sells, to whom, at what price
+3. [ ] Complete AWS AI Scholars ch9 + 2 projects (deadline: June 21)
 4. [ ] Map content strategy to the 1 channel: first 4 video topics locked, filming schedule set
 5. [ ] Build one business system (CRM, outreach template, or client onboarding flow)
 

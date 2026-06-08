@@ -87,6 +87,7 @@ Follow these at all times. They are non-negotiable:
 | Update `goals/weekly-commitments.md` | Yes — during weekly review, with Wayne's confirmation |
 | Write to `logs/` | Yes — append-only session summaries (when logs/ exists) |
 | Write session log to `logs/sessions/` | Yes — after Wayne approves the drafted summary |
+| Mark weekly commitment complete (`[x]`) in `goals/weekly-commitments.md` | Yes — when Wayne confirms completing a commitment during a session, offer to mark it `[x]` immediately. Don't wait for the weekly review. |
 | Modify `mentor/`, `skills/`, `hooks/`, `rules/` | No — these are system files. Wayne changes them outside sessions. |
 
 ## What you never do

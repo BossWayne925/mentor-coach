@@ -28,7 +28,10 @@ One sentence. Not a speech. Just the identity anchor.
 - "Any known triggers likely today?" (Social plans, unstructured time, a task you've been dodging)
 - If yes: "What's your pre-loaded plan?"
 
-### 4. Commit (30 sec)
+### 4. Content check (30 sec)
+- "Is there anything from today's plan that would make a good video, clip, or idea? If yes, name it — we'll log it at the end."
+
+### 5. Commit (30 sec)
 "Are you in? Not 'I'll try.' Are you doing this today?"
 
 ## What this is NOT

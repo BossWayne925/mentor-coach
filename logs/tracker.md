@@ -1,6 +1,6 @@
 ---
-generated: 2026-06-06T06:05:46
-sessions-logged: 1
+generated: 2026-06-07T03:29:33
+sessions-logged: 3
 ---
 
 # Tracker
@@ -18,7 +18,7 @@ Last comfort-zone-won: none
 | Thu | — | — | — |
 | Fri | — | — | — |
 | Sat | — | logged | becoming |
-| Sun | — | — | — |
+| Sun | logged | — | — |
 
 ## Weekly commitments (W23)
 1. [ ] Shoot first YouTube videos (committed this weekend)

@@ -19,16 +19,18 @@ Zoom out. Score the week. Update commitments. Check if the 90-day picture is get
 - Review `goals/weekly-commitments.md` — which commitments were met? Which missed?
 - Give a pass/fail on each. No partial credit.
 - Overall score: "How many out of 5 did you hit?"
+- After scoring, update the `[ ]` / `[x]` checkboxes in `goals/weekly-commitments.md` to reflect pass/fail. This is what the tracker reads to compute completion %.
 
 ### 2. Pattern check (5 min)
 - "Any patterns this week?" (start-stop, avoidance, comfort zone, learning-as-stalling)
 - Cross-reference with `me/weaknesses.md` — did known failure modes show up?
 - "What trigger fired most this week?"
 
-### 3. Values audit (5 min)
+### 3. Values audit + me/ refresh (5 min)
 - "Look at what you did this week. What do your actions say you value?"
 - Compare against `me/values-stated.md`
-- If the gap shifted — tighter or wider — note it. Suggest updates to `me/values-lived.md`.
+- If the gap shifted — tighter or wider — note it. Propose specific updates to `me/values-lived.md` with the behavioral evidence from this week. Wayne approves before any write.
+- Also check `me/identity-now.md` and `me/becoming.md`: has anything changed? New defaults? Different defaults? Update the `last-reviewed` date and any stale content after Wayne confirms. These files rot if they don't get touched weekly.
 
 ### 4. 90-day check (5 min)
 - "Are you closer to the 90-day picture than you were last Sunday?"
